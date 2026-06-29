@@ -1,0 +1,761 @@
+Hello i want to design this HTML code for a tech school 
+named Othello Institute of Technology. this is the school design i uploaded, i was asked to build the 	website using the design color and texture so it identifys their brand and School. Make sure the design should be rated 9.5/10 with modern design and texture, and professional layout. for the hero section i want you to replace it entirely with swipping gradient background images so it displays the brand 100% also include these 2 new course to the course card sections 
+1.Generative Ai 
+2. Ai Videography. all these courses should also be included in the meta tags
+the courses card layout should be professional and clean make sure to add professional margin and padding for space. the card should stay stacked on desktop , but swipe on mobile 📱  professionally and.
+
+Make sure the website stands as a very Powerful contestant against other tech school website. You can also add new Html featuees if you want and also remove some featurres if you think they are not needed.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Othello Institute of Technology | Coding, Data Science & Digital Skills Training in Nigeria</title>
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Othello Institute of Technology | Coding, Data Science & Digital Skills Training in Nigeria">
+  <meta name="description" content="Othello Institute of Technology is Nigeria’s hub for coding, data science, Python, AI Automations, ICT, and graphics design training. Join expert-led cohorts and build your future-ready tech skills.">
+  <meta name="keywords" content="Othello Institute of Technology, Othello Tech Institute, Othello Institute, Othello School of Technology, Othello ICT Academy, coding school Nigeria, coding classes Nigeria, software development bootcamp, web development training, data science training Nigeria, Python bootcamp, AI courses Nigeria, ICT training, ICT training Lagos, graphics design school Lagos, UI/UX design school Nigeria, digital skills academy Nigeria, coding for beginners Nigeria, coding for kids Nigeria, ICT training for professionals, digital skills for students, Lagos coding bootcamp, Ojo ICT center, Nigeria technology institute, othello institute">
+  <meta name="author" content="Othello Institute of Technology">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="theme-color" content="#0d0d0d">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Othello Institute of Technology">
+  <meta property="og:url" content="https://othelloinstituteoftechnology.netlify.app/">
+  <meta property="og:title" content="Othello Institute of Technology | Coding, Data Science & Digital Skills Training in Nigeria">
+  <meta property="og:description" content="Future-Proof Your Career at Othello Institute of Technology (OIT)
+Join one of Lagos’ leading tech training centers and gain in-demand digital skills. Learn:
+	•	Full Stack Web Development (Frontend & Backend Coding)
+	•	Data Analysis (Excel, SQL, Power BI, Python)
+	•	Data Science & Artificial Intelligence (AI, Machine Learning, Deep Learning)
+	•	ICT Fundamentals (Computer Training, Office Tools, Internet Skills)
+	•	UI/UX & Graphics Design
+Expert-led, hands-on cohorts | Internship & job support | Flexible learning for beginners and professionals
+Location: Iba Housing Estate, Ojo, Lagos, Nigeria">
+  <meta property="og:image" content="https://othelloinstituteoftechnology.netlify.app/img/preview_branded.jpg">
+  <meta property="og:locale" content="en_NG">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@othelloinstitute">
+  <meta name="twitter:title" content="Othello Institute of Technology | Coding, Data Science & Digital Skills Training in Nigeria">
+  <meta name="twitter:description" content="Learn coding, AI, data analysis, ICT, and design at Othello Institute of Technology. Registration is open for the next cohort.">
+  <meta name="twitter:image" content="https://othelloinstituteoftechnology.netlify.app/img/preview_branded.jpg">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://othelloinstituteoftechnology.netlify.app/">
+
+  <!-- Favicons -->
+  <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./img/favicon.png" type="image/png" sizes="48x48">
+  <link rel="apple-touch-icon" href="./img/favicon.png">
+
+  <!-- Preload critical assets -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Fonts & CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="./css/styles.css">
+
+  <!-- ScrollReveal -->
+  <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+
+  <!-- Structured Data: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Othello Institute of Technology",
+    "url": "https://othelloinstituteoftechnology.netlify.app/",
+    "logo": "https://othelloinstituteoftechnology.netlify.app/img/favicon.png",
+    "sameAs": [
+      "https://facebook.com/othelloinstitute",
+      "https://twitter.com/othelloinstitute",
+      "https://instagram.com/othelloinstitute"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Iba Housing Estate Market Square Complex, Iba, Ojo, Lagos, Nigeria",
+      "addressLocality": "Lagos",
+      "addressCountry": "NG"
+    },
+    "telephone": "+2348127961486",
+    "description": "Othello Institute of Technology offers hands-on training in coding, data analysis, AI, Python, ICT, and graphics design."
+  }
+  </script>
+
+  <!-- Structured Data: Example Course -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Software Developer Bootcamp in Nigeria",
+    "description": "20-week software development bootcamp in Lagos, Nigeria. Hands-on coding skills for beginners and career switchers.",
+    "provider": {
+      "@type": "EducationalOrganization",
+      "name": "Othello Institute of Technology",
+      "sameAs": "https://othelloinstituteoftechnology.netlify.app/"
+    }
+  }
+  </script>
+</head>
+
+
+<body>
+  <!-- Navbar -->
+  <header class="navbar" data-sr="navbar">
+    <div class="nav-container">
+      <div class="logo" data-sr="logo">
+        <h2 class="logo-short">Oth<span style="color: blue;">el</span>lo Institute of Tech<span style="color: blue;">nolo</span>gy</h2>
+        <h2 class="logo-full">Oth<span style="color: blue;">el</span>lo Institute</h2>
+      </div>
+      <nav class="nav-menu" data-sr="nav-menu">
+        <ul>
+          <li><a href="#programs"><i class="fa-solid fa-books"></i> Programs</a></li>
+          <li><a href="#course-section">Courses</a></li>
+          <li><a href="#why-join">Why Choose Us</a></li>
+          <li><a href="#mentors-title">Our Instructors</a></li>
+          <li class="highlight"><a href="#register">Register With Us</a></li>
+        </ul>
+      </nav>
+      <div class="nav-right" data-sr="nav-right">
+        <span class="call-text">Call us</span>
+        <span class="phone"><i class="fa-solid fa-phone"></i> +234 812 796 1486</span>
+      </div>
+      <button class="mobile-toggle" data-sr="mobile-toggle" aria-expanded="false" aria-label="Open menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" data-sr="hero">
+    <div class="hero-content">
+      <div class="hero-text" data-sr="hero-text">
+        <h1 id="hero-text-content">
+          <span class="highlight-blue">Learn</span> digital skills. <br>
+          <span style="margin-top: 20px; display: inline-block;" class="highlight-green">Boost</span> your career.
+        </h1>
+        <p>
+          Beginner-friendly courses that will teach you the jobs of today and tomorrow, provided by experienced and trusted instructors.
+        </p>
+        <button class="btn-learn"> <a href="#register">Learn More <i class="fas fa-arrow-right" aria-hidden="true"></i> </a></button>
+      </div>
+      <div class="hero-image" data-sr="hero-image">
+        <div class="slideshow">
+          <img src="./img/young-african-man-studying-home-600nw-1724285719-removebg-preview.png" alt="Hero Image 1" class="slide active">
+          <img src="./img/depositphotos_379175850-stock-photo-young-surprised-african-american-man-removebg-preview.png" alt="Hero Image 2" class="slide">
+          <img src="./img/istockphoto-1748514613-612x612-removebg-preview.png" alt="Hero Image 3" class="slide">
+                    <img src="./img/othello img_100106.png" alt="Hero Image 4" class="slide">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Course Section -->
+  <section class="course-section" id="course-section" data-sr="course-section">
+    <h2 data-sr="course-title">Join the course adapted to your needs</h2>
+    <p data-sr="course-text">
+      Whether you want to learn fundamental skills, boost your career with an international 
+      certification, or change your career, we have the right program for you.
+    </p>
+    <div class="features">
+      <div class="feature" data-sr="feature-1"><i class="fa-solid fa-check"></i> 40 to 360 hours</div>
+      <div class="feature" data-sr="feature-2"><i class="fa-solid fa-check"></i> Live classes</div>
+      <div class="feature" data-sr="feature-3"><i class="fa-solid fa-check"></i> On site or online</div>
+    </div>
+    <div class="categories" data-sr="categories">
+      <button class="active"><i class="fa-solid fa-database"></i>Data Courses </button>
+      <button><i class="fa-solid fa-code"></i> Computer Science </button>
+      <button><i class="fa-solid fa-bullhorn"></i> Marketing</button>
+      <button><i class="fa-solid fa-paintbrush"></i> Design</button>
+    </div>
+  </section>
+
+  <!-- Cards Section -->
+  <section class="cards-section" data-sr="cards-section">
+    <div class="card" data-sr="card-1">
+      <div class="card-image">
+        <img src="./img/download.jpeg" alt="Software Developer Bootcamp">
+        <span class="badge green">Career change</span>
+      </div>
+      <div class="card-body">
+        <h3>Software Developer Bootcamp</h3>
+        <p>
+          A tailored 20-week bootcamp, perfect for tech newcomers or those with 
+          minimal programming experience who want to transform their career.
+        </p>
+        <button class="btn" id="#register"> <a href="#register" class="btn"> Learn More </a> </button>
+      </div>
+    </div>
+    <div class="card" data-sr="card-2">
+      <div class="card-image">
+        <img src="./img/Become_a_Front_End_Developer.avif" alt="Introduction to Web Programming">
+        <span class="badge purple">Introduction</span>
+      </div>
+      <div class="card-body">
+        <h3>Introduction to Web Programming</h3>
+        <p>
+          A beginner-friendly training, tailored to help you build your first 
+          website with hands-on learning and expert guidance.
+        </p>
+        <button class="btn" id="#register"> <a href="#register"> Learn More </a> </button>
+      </div>
+    </div>
+    <div class="card" data-sr="card-3">
+      <div class="card-image">
+        <img src="./img/pi1qzr9hfliljiitmfqk.jpg" alt="Front End Developer – React JS">
+        <span class="badge blue">Advanced</span>
+      </div>
+      <div class="card-body">
+        <h3>Front End Developer – React JS</h3>
+        <p>
+          Dive into React JS mastery in our advanced course for developers with 
+          basic front-end skills.
+        </p>
+        <button class="btn" id="#register"> <a href="#register">Learn More</a> </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programs / Courses -->
+  <section id="programs" aria-labelledby="programs-title" data-sr="programs">
+    <div class="container">
+      <h2 id="programs-title" data-sr="programs-title"><i class="fas fa-graduation-cap" aria-hidden="true"></i> Our Programs</h2>
+      <p class="section-intro" data-sr="programs-intro">Practical, hands-on training designed for beginners and career switchers.</p>
+      <div class="program-cards" role="list">
+        <article class="program-card" role="listitem" aria-labelledby="prog-coding-title" data-sr="program-coding">
+          <h3 id="prog-coding-title"><i class="fas fa-code" aria-hidden="true"></i> Coding</h3>
+          <p>Front-end & full-stack fundamentals with projects.</p>
+          <ul>
+            <li><i class="fas fa-clock" aria-hidden="true"></i> Duration: 16 weeks</li>
+            <li><i class="fas fa-briefcase" aria-hidden="true"></i> Outcomes: Portfolio project</li>
+          </ul>
+          <a href="#curriculum" class="learn-more"><i class="fas fa-arrow-right" aria-hidden="true"></i> Learn more</a>
+        </article>
+        <article class="program-card" role="listitem" aria-labelledby="prog-data-title" data-sr="program-data">
+          <h3 id="prog-data-title"><i class="fas fa-chart-line" aria-hidden="true"></i> Data Analysis tools</h3>
+          <p>Data cleaning, Excel/Sheets, visualization and reporting.</p>
+          <ul>
+            <li><i class="fas fa-clock" aria-hidden="true"></i> Duration: 16 weeks</li>
+            <li><i class="fas fa-toolbox" aria-hidden="true"></i> Tools:  Excel/Sheets, Google Sheet, Power BI/Tabeau SQL & Python</li>
+          </ul>
+          <a href="#curriculum" class="learn-more"><i class="fas fa-arrow-right" aria-hidden="true"></i> Learn more</a>
+        </article>
+        <article class="program-card" role="listitem" aria-labelledby="prog-dsai-title" data-sr="program-dsai">
+          <h3 id="prog-dsai-title"><i class="fas fa-robot" aria-hidden="true"></i> Data Science & AI</h3>
+          <p>Intro to ML, model building and AI awareness for beginners.</p>
+          <ul>
+            <li><i class="fas fa-clock" aria-hidden="true"></i> Duration: 16 weeks</li>
+            <li><i class="fas fa-project-diagram" aria-hidden="true"></i> Projects: Predictive models</li>
+          </ul>
+          <a href="#curriculum" class="learn-more"><i class="fas fa-arrow-right" aria-hidden="true"></i> Learn more</a>
+        </article>
+        <article class="program-card" role="listitem" aria-labelledby="prog-python-title" data-sr="program-python">
+          <h3 id="prog-python-title"><i class="fab fa-python" aria-hidden="true"></i> Python Programming</h3>
+          <p>Core Python for automation, scripting and data tasks.</p>
+          <a href="#curriculum" class="learn-more"><i class="fas fa-arrow-right" aria-hidden="true"></i> Learn more</a>
+        </article>
+        <article class="program-card" role="listitem" aria-labelledby="prog-ict-title" data-sr="program-ict">
+          <h3 id="prog-ict-title"><i class="fas fa-desktop" aria-hidden="true"></i> ICT Fundamentals</h3>
+          <p>Computer basics, networking essentials and troubleshooting.</p>
+          <a href="#curriculum" class="learn-more"><i class="fas fa-arrow-right" aria-hidden="true"></i> Learn more</a>
+        </article>
+        <article class="program-card" role="listitem" aria-labelledby="prog-graphics-title" data-sr="program-graphics">
+          <h3 id="prog-graphics-title"><i class="fas fa-palette" aria-hidden="true"></i> Graphics & UI Design</h3>
+          <p>Design fundamentals for interfaces and marketing materials.</p>
+          <a href="#curriculum" class="learn-more"><i class="fas fa-arrow-right" aria-hidden="true"></i> Learn more</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Join -->
+  <section id="why-join" aria-labelledby="why-join-title" data-sr="why-join">
+    <div class="container">
+      <h2 id="why-join-title" data-sr="why-join-title"><i class="fas fa-heart" aria-hidden="true"></i> Why Join Othello Institute of Technology?</h2>
+      <p class="section-intro" data-sr="why-join-intro">We focus on practical skills, mentorship and real projects.</p>
+      <ul class="benefit-tiles" role="list">
+        <li role="listitem" data-sr="benefit-1">
+          <h3><i class="fas fa-seedling" aria-hidden="true"></i> Beginner Friendly</h3>
+          <p>No prior experience required  we guide you from day one.</p>
+        </li>
+        <li role="listitem" data-sr="benefit-2">
+          <h3><i class="fas fa-tools" aria-hidden="true"></i> Hands-on Projects</h3>
+          <p>Build real projects to showcase in your portfolio.</p>
+        </li>
+        <li role="listitem" data-sr="benefit-3">
+          <h3><i class="fas fa-user-tie" aria-hidden="true"></i> Mentorship</h3>
+          <p>Get support from experienced instructors and industry mentors.</p>
+        </li>
+        <li role="listitem" data-sr="benefit-4">
+          <h3><i class="fas fa-briefcase" aria-hidden="true"></i> Job Guidance</h3>
+          <p>CV help, interview prep and connections to local employers.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Curriculum Snapshot -->
+  <section id="curriculum" aria-labelledby="curriculum-title" data-sr="curriculum">
+    <div class="container">
+      <h2 id="curriculum-title" data-sr="curriculum-title"><i class="fas fa-list-check" aria-hidden="true"></i> Curriculum Snapshot</h2>
+      <p class="section-intro" data-sr="curriculum-intro">Short overview of what you'll learn in each track.</p>
+      <div class="curriculum-grid">
+        <div class="track" data-sr="track-coding">
+          <h3>Coding Track</h3>
+          <ol>
+            <li>HTML & CSS fundamentals</li>
+            <li>Responsive layouts</li>
+            <li>JavaScript basics & DOM</li>
+            <li>Simple backend introduction</li>
+          </ol>
+        </div>
+        <div class="track" data-sr="track-data">
+          <h3>Data Analysis Track</h3>
+          <ol>
+            <li>Data collection & cleaning</li>
+            <li>Analysis with Excel / Sheets</li>
+            <li>Intro to pandas & Python</li>
+            <li>Data visualization & dashboards</li>
+          </ol>
+        </div>
+        <div class="track" data-sr="track-dsai">
+          <h3>Data Science & AI Track</h3>
+          <ol>
+            <li>Statistics basics</li>
+            <li>Intro to machine learning</li>
+            <li>Model evaluation</li>
+            <li>Ethical AI & deployment concepts</li>
+          </ol>
+        </div>
+      </div>
+      <p class="more-link" data-sr="curriculum-link"><a href="#register"><i class="fas fa-arrow-right" aria-hidden="true"></i> View full syllabus & register</a></p>
+    </div>
+  </section>
+
+  <!-- Success Stories Section -->
+  <section class="stories" data-sr="stories">
+    <div class="container">
+      <h2 class="stories__title" data-sr="stories-title">Success Stories</h2>
+      <p class="stories__subtitle" data-sr="stories-subtitle">Hear from our students and instructors who have transformed their careers with our programs.</p>
+      <div class="stories__swiper swiper" data-sr="stories-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="card">
+              <figure class="card__figure">
+                <img class="card__img" src="./img/test2.jpg" alt="Instructor Spotlight">
+                <div class="card__scrim"></div>
+                <button class="card__play" data-video="https://www.youtube.com/watch?v=IFcHVSEcW-g">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </button>
+                <figcaption class="card__caption">
+                  <span class="chip chip--green chip--name">Yakub Adam </span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <figure class="card__figure">
+                <img class="card__img" src="./img/test1.jpg" alt="Student Spotlight">
+                <div class="card__scrim"></div>
+                <button class="card__play" data-video="https://www.youtube.com/watch?v=pvbV15GtJEU">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </button>
+                <figcaption class="card__caption">
+                  <span class="ribbon">Student Spotlight</span>
+                  <span class="chip chip--yellow chip--name">Bakare Eniola</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="card">
+              <figure class="card__figure">
+                <img class="card__img" src="./img/test3.jpg" alt="Student Spotlight">
+                <div class="card__scrim"></div>
+                <button class="card__play" data-video="https://www.youtube.com/watch?v=taMRjLqW-x0">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </button>
+                <figcaption class="card__caption">
+                  <span class="ribbon">Student Spotlight</span>
+                  <span class="chip chip--yellow chip--name">Amadike Modesta</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+               <div class="swiper-slide">
+            <div class="card">
+              <figure class="card__figure">
+                <img class="card__img" src="./img/test4.jpg" alt="Student Spotlight">
+                <div class="card__scrim"></div>
+                <button class="card__play" data-video="https://www.youtube.com/watch?v=FefS8oQDgOA">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </button>
+                <figcaption class="card__caption">
+                  <span class="ribbon">Student Spotlight</span>
+                  <span class="chip chip--yellow chip--name">God's Will</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+               <div class="swiper-slide">
+            <div class="card">
+              <figure class="card__figure">
+                <img class="card__img" src="./img/test5.jpg" alt="Student Spotlight">
+                <div class="card__scrim"></div>
+                <button class="card__play" data-video="https://www.youtube.com/watch?v=uDeZsf0-GFI">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                </button>
+                <figcaption class="card__caption">
+                  <span class="ribbon">Student Spotlight</span>
+                  <span class="chip chip--yellow chip--name">Ukah Amarachi</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule & Countdown -->
+  <section id="schedule" aria-labelledby="schedule-title" data-sr="schedule">
+    <div class="container">
+      <h2 id="schedule-title" data-sr="schedule-title"><i class="fas fa-clock" aria-hidden="true"></i> Schedule</h2>
+      <p class="section-intro" data-sr="schedule-intro">Training sessions are held <strong>Every Month</strong>.</p>
+      <div class="schedule-panel" data-sr="schedule-panel">
+        <p><i class="fas fa-calendar-day" aria-hidden="true"></i> Next cohort: <strong id="next-cohort-date">Loading...</strong></p>
+        <div id="countdown" aria-live="polite">Countdown: <span id="countdown-timer"></span></div>
+        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Venue: Iba Housing Estate Market Square Complex, Iba, Ojo, Lagos</p>
+        <p><a href="#register"><i class="fas fa-ticket-alt" aria-hidden="true"></i> Reserve your seat</a></p>
+        <p>Spaces are limited.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" aria-labelledby="how-it-works-title" data-sr="how-it-works">
+    <div class="container">
+      <h2 id="how-it-works-title" data-sr="how-it-works-title"><i class="fas fa-gear" aria-hidden="true"></i> How Registration Works</h2>
+      <ol class="steps" role="list">
+        <li data-sr="step-1">
+          <h3><i class="fas fa-clipboard-list" aria-hidden="true"></i> 1 — Register</h3>
+          <p>Complete the short registration form on this page.</p>
+        </li>
+        <li data-sr="step-2">
+          <h3><i class="fas fa-comments" aria-hidden="true"></i> 2 — Confirm</h3>
+          <p>We will send a confirmation via WhatsApp or SMS with joining details.</p>
+        </li>
+        <li data-sr="step-3">
+          <h3><i class="fas fa-hands-helping" aria-hidden="true"></i> 3 — Attend</h3>
+          <p>Join us on the last Friday for hands-on training and networking.</p>
+        </li>
+      </ol>
+      <p class="secondary-cta" data-sr="how-it-works-cta"><a href="#register" class="btn btn-outline" ><i class="fas fa-download" aria-hidden="true"></i> Download  Brochure</a></p>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" aria-labelledby="testimonials-title" data-sr="testimonials">
+    <div class="container">
+      <h2 id="testimonials-title" data-sr="testimonials-title"><i class="fas fa-quote-left" aria-hidden="true"></i> What Our Students Say</h2>
+      <p class="stats" data-sr="testimonials-stats"><i class="fas fa-users" aria-hidden="true"></i> 1,200+ trainees • 92% recommend</p>
+      <div class="testimonials-grid" role="list">
+        <figure class="testimonial" role="listitem" data-sr="testimonial-1">
+          <blockquote>
+            "The instructors were patient and the projects helped me land my first freelancing job."
+          </blockquote>
+          <figcaption>
+            <img src="./img/testo1.jpg" alt="Portrait of Chioma A., Data Analysis student" width="48" height="48" loading="lazy">
+            <cite>Anita — Data Analysis</cite>
+          </figcaption>
+        </figure>
+        <figure class="testimonial" role="listitem" data-sr="testimonial-2">
+          <blockquote>
+            "Practical and hands-on. Loved building a portfolio site in just 8 weeks."
+          </blockquote>
+          <figcaption>
+            <img src="./img/testoo.jpg" alt="Portrait of Tunde K., Coding student" width="48" height="48" loading="lazy">
+            <cite>Bakare Eniola -  Data Science & AI</cite>
+          </figcaption>
+        </figure>
+        <figure class="testimonial" role="listitem" data-sr="testimonial-3">
+          <blockquote>
+            "Great mentors and a friendly community. The mentorship continued after the class."
+          </blockquote>
+          <figcaption>
+            <img src="./img/Amadika.jpg" alt="Portrait of Amaka O., Data Science student" width="48" height="48" loading="lazy">
+            <cite>Amadika Modesta — Full Stack Web Developer / Coding</cite>
+          </figcaption>
+        </figure>
+      </div>
+      <p class="more-testimonials" data-sr="testimonials-link"><a href="https://www.facebook.com/share/19k35odurU/?mibextid=wwXIfr"><i class="fas fa-share" aria-hidden="true"></i> Share your story</a></p>
+    </div>
+  </section>
+
+  <!-- Instructors & Mentors -->
+  <section id="mentors" aria-labelledby="mentors-title" data-sr="mentors">
+    <div class="container">
+      <h2 id="mentors-title" data-sr="mentors-title"><i class="fas fa-user-graduate" aria-hidden="true"></i> Instructors & Mentors</h2>
+      <p class="section-intro" data-sr="mentors-intro">Experienced practitioners teaching practical skills.</p>
+      <div class="mentors-grid" role="list">
+        <article class="mentor-card" role="listitem" data-sr="mentor-1">
+          <img src="./img/chhi.jpg" alt="Photo of mentor" width="120" height="120" loading="lazy">
+          <h4> Yakub Adam</h4>
+          <p><i class="fas fa-briefcase" aria-hidden="true"></i>   CEO - Data Analyst and Data Science Instructor</p>
+          <p class="small">Skillful in Data Analystic and Data Science with years of Experience</p>
+          <p><a href="https://www.linkedin.com/in/yakub-ibrahim-adam-914995179/" aria-label=" LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a></p>
+        </article>
+        <article class="mentor-card" role="listitem" data-sr="mentor-2">
+          <img src="./img/test6.jpg" alt="Photo of mentor Jane Smith" width="120" height="120" loading="lazy">
+          <h4> Samuel Oluwapamilerin Daniel </h4>
+          <p><i class="fas fa-flask" aria-hidden="true"></i> Web Tutor — Web Development Tutor</p>
+          <p class="small">Hands-on with Web development Languages and data pipelines.</p>
+          <p><a href="https://www.linkedin.com/company/othello-institute-of-technology/" aria-label="Jane Smith LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a></p>
+        </article>
+        <article class="mentor-card" role="listitem" data-sr="mentor-3">
+          <img src="./img/chlboy.jpg" alt="Photo of mentor Jane Smith" width="120" height="120" loading="lazy">
+          <h4> Chiagozie Joseph </h4> 
+          <p><i class="fas fa-flask" aria-hidden="true"></i> Web Tutor  — Asst. Web Development Tutor</p>
+          <p class="small">Hands-on with Web development Languages and data pipelines.</p>
+          <p><a href="https://www.linkedin.com/company/othello-institute-of-technology/" aria-label="Jane Smith LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin" aria-hidden="true"></i> LinkedIn</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+<!-- Registration Form -->
+<section id="register" aria-labelledby="register-title" data-sr="register">
+  <div class="container">
+    <h2 id="register-title" data-sr="register-title">
+      <i class="fas fa-file-signature" aria-hidden="true"></i> Register for the Next Cohort Now!!
+    </h2>
+    <p class="section-intro" data-sr="register-intro"> Registration is free and compulsory, register now and secure your seat!. </p>
+    <!-- FormSubmit integration -->
+    <form id="registration-form" 
+          action="https://formsubmit.co/886f4a3dd4daafd85fb31bbc64958d33" 
+          method="POST" 
+          autocomplete="on" 
+          data-sr="registration-form">
+
+      <!-- Hidden Config -->
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_subject" value="New Registration Submission">
+
+      <!-- Redirect (_next) will be set dynamically via JS -->
+      <input type="hidden" id="redirectUrl" name="_next">
+
+      <div class="form-row" data-sr="form-row-1">
+        <label for="fullName">Full Name</label>
+        <input id="fullName" name="fullName" type="text" required maxlength="100" 
+               placeholder="Your full name" 
+               pattern="[A-Za-z\s]{2,100}" 
+               title="Enter your full name (letters and spaces only, 2-100 characters)">
+      </div>
+
+      <div class="form-row" data-sr="form-row-2">
+        <label for="email">Email Address</label>
+        <input id="email" name="email" type="email" required 
+               placeholder="you@example.com" 
+               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+               title="Enter a valid email address">
+      </div>
+
+      <div class="form-row" data-sr="form-row-3">
+        <label for="phone">Phone / WhatsApp</label>
+        <input id="phone" name="phone" type="tel" required 
+               placeholder="+234..." inputmode="tel" maxlength="20" 
+               pattern="\+?[0-9]{10,20}" 
+               title="Enter a valid phone number">
+      </div>
+
+      <div class="form-row" data-sr="form-row-4">
+        <label for="courseChoice">Course / Track</label>
+        <select id="courseChoice" name="courseChoice" required>
+          <option value="" disabled selected> Choose a course </option>
+          <option value="coding">Coding</option>
+          <option value="data-analysis">Data Analysis</option>
+          <option value="data-science-ai">Data Science & AI</option>
+          <option value="python">Python Programming</option>
+          <option value="ict">ICT Fundamentals</option>
+          <option value="graphics">Graphics & UI Design</option>
+        </select>
+      </div>
+
+      <div class="form-row" data-sr="form-row-5">
+        <label for="experience">Experience Level</label>
+        <select id="experience" name="experience" required>
+          <option value="" disabled selected> Select </option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </div>
+
+      <div class="form-row" data-sr="form-row-6">
+        <label for="howDidYouHear">How Did You Hear About Us? (optional)</label>
+        <input id="howDidYouHear" name="howDidYouHear" type="text" maxlength="200" 
+               placeholder="Facebook, Friend, Poster, etc.">
+      </div>
+
+      <input type="hidden" name="source" value="website_landing">
+
+      <div class="form-actions" data-sr="form-actions">
+        <button type="submit" class="btn btn-primary">
+          <i class="fas fa-paper-plane" aria-hidden="true"></i> Submit Registration
+        </button>
+        <p class="small">
+          <i class="fas fa-info-circle" aria-hidden="true"></i> We will confirm via WhatsApp/SMS. 
+          Your seat is not confirmed until you receive a confirmation message.
+        </p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- JS to auto-detect environment -->
+<script>
+  const redirectField = document.getElementById("redirectUrl");
+
+  // If running locally (localhost), use relative thankyou page
+  if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+    redirectField.value = "/others/thankyou.html";
+  } else {
+    // On production (Netlify or custom domain)
+    redirectField.value = "https://othelloinstituteoftechnology.netlify.app/others/thankyou.html";
+  }
+</script>
+
+
+
+  <!-- Contact & Venue -->
+  <section id="contact" aria-labelledby="contact-title" data-sr="contact">
+    <div class="container">
+      <h2 id="contact-title" data-sr="contact-title"><i class="fas fa-address-book" aria-hidden="true"></i> Contact & Venue</h2>
+      <div class="contact-grid">
+        <div data-sr="contact-info">
+          <h4>Contact & Venue</h4>
+          <address>
+            <strong>Othello Institute of Technology</strong><br>
+            Iba Housing Estate Market Square Complex, Iba, Ojo, Lagos, Nigeria<br>
+            <a href="tel:+234 812 796 1486"><i class="fas fa-phone" aria-hidden="true"></i> +234 812 796 1486</a><br>
+            <a href="mailto:OthelloInstituteoftechnology@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> OthelloInstituteoftechnology@gmail.com</a>
+          </address>
+        </div>
+        <div class="social" data-sr="social">
+          <h4>Follow Us</h4>
+          <ul>
+            <li><a href="https://wa.me/2349113668905" target="_blank" rel="noopener" aria-label="WhatsApp contact"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp</a></li>
+            <li><a href="https://www.facebook.com/share/19k35odurU/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook page"><i class="fab fa-facebook" aria-hidden="true"></i> Facebook</a></li>
+            <li><a href="https://www.instagram.com/othelloinstituteoftechnology?igsh=MXJqaTVyZzh4dTF3dQ%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram profile"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+            <li><a href="https://www.linkedin.com/company/othello-institute-of-technology/" target="_blank" rel="noopener" aria-label="linkedin profile"><i class="fab fa-linkedin" aria-hidden="true"></i> Linkdln </a></li>
+          </ul>
+        </div>
+        <div class="map" data-sr="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.974008305395!2d3.186963314769058!3d6.465881995320828!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8d9b7b6f6e57%3A0x7b6f6e57b8d9b8d!2sIba%20Housing%20Estate%2C%20Ojo%2C%20Lagos!5e0!3m2!1sen!2sng!4v1698765432109!5m2!1sen!2sng" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+
+  <!-- FAQs -->
+  <section id="faqs" aria-labelledby="faqs-title" data-sr="faqs">
+    <div class="container">
+      <h2 id="faqs-title" data-sr="faqs-title"><i class="fas fa-question" aria-hidden="true"></i> Frequently Asked Questions</h2>
+      <div class="faqs-list">
+        <details data-sr="faq-1">
+          <summary>Do I need a laptop?</summary>
+          <p>Bringing a laptop is recommended for practical sessions, but not mandatory for beginners.</p>
+        </details>
+        <details data-sr="faq-2">
+          <summary>What ages can join?</summary>
+          <p>We welcome learners aged 16 and above. Some advanced tracks may require prior experience.</p>
+        </details>
+        <details data-sr="faq-3">
+          <summary>How will I receive my confirmation?</summary>
+          <p>We confirm seats via WhatsApp or SMS using the phone number you provide during registration.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners & Sponsors -->
+  <section id="partners" aria-labelledby="partners-title" data-sr="partners">
+    <div class="container">
+      <h2 id="partners-title" data-sr="partners-title"><i class="fas fa-handshake" aria-hidden="true"></i> Partners & Sponsors</h2>
+      <p data-sr="partners-intro">If you'd like to sponsor our programs or partner with us, please contact us.</p>
+      <div class="partners-logos" role="list">
+        <img src="./img/google.webp" alt="Partner 1 logo" role="listitem" loading="lazy" data-sr="partner-1">
+        <img src="./img/support1.png" alt="Partner 2 logo" role="listitem" loading="lazy" data-sr="partner-2">
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer" data-sr="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand" data-sr="footer-brand">
+          <h2>Oth<span style="color: #7c3aed;">el</span>lo Institute of Technology</h2>
+          <p>Empowering the next generation with digital skills for a brighter future.</p>
+        </div>
+        <div class="footer-links" data-sr="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#programs"><i class="fas fa-books" aria-hidden="true"></i> Courses</a></li>
+            <li><a href="#why-join"><i class="fas fa-heart" aria-hidden="true"></i> Why Choose Us</a></li>
+            <li><a href="#register"><i class="fas fa-file-signature" aria-hidden="true"></i> Register</a></li>
+            <li><a href="#contact"><i class="fas fa-address-book" aria-hidden="true"></i> Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact" data-sr="footer-contact">
+          <h4>Contact Us</h4>
+          <address>
+            Iba Housing Estate Market Square Complex, Ojo, Lagos<br>
+            <a href="tel:+234 812 796 1486"><i class="fas fa-phone" aria-hidden="true"></i> +234 812 796 1486</a><br>
+            <a href="mailto:OthelloInstituteoftechnology@gmail.com"><i class="fas fa-envelope" aria-hidden="true"></i> othelloinstituteoftechnology.com</a>
+          </address>
+        </div>
+        <div class="footer-social" data-sr="footer-social">
+          <h4>Follow Us</h4>
+           <ul>
+            <li><a href="https://wa.me/234 812 796 1486" target="_blank" rel="noopener" aria-label="WhatsApp contact"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp</a></li>
+            <li><a href="https://www.facebook.com/share/19k35odurU/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook page"><i class="fab fa-facebook" aria-hidden="true"></i> Facebook</a></li>
+            <li><a href="https://www.instagram.com/othelloinstituteoftechnology?igsh=MXJqaTVyZzh4dTF3dQ%3D%3D&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram profile"><i class="fab fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+            <li><a href="https://www.linkedin.com/company/othello-institute-of-technology/" target="_blank" rel="noopener" aria-label="linkedin profile"><i class="fab fa-linkedin" aria-hidden="true"></i> Linkdln </a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom" data-sr="footer-bottom">
+        <p>&copy; 2025 Othello Institute of Technology. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+</html>

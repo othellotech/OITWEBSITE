@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registration Successful | Othello Institute of Technology</title>
+  
+  <!-- Meta Tags -->
+  <meta name="description" content="Thank you for registering with Othello Institute of Technology. Start your tech journey today.">
+  <meta name="theme-color" content="#FFD700">
+  
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ==================== ROOT VARIABLES ==================== */
+    :root {
+      /* Brand Colors - Matching Main Website */
+      --primary-yellow: #ffd700;
+      --primary-blue: #1e40af;
+      --accent-yellow: #ffc000;
+      --accent-blue: #2563eb;
+      --dark-blue: #0f172a;
+      --light-blue: #dbeafe;
+
+      /* Neutral Colors */
+      --white: #ffffff;
+      --black: #000000;
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+
+      /* Spacing */
+      --spacing-xs: 0.5rem;
+      --spacing-sm: 1rem;
+      --spacing-md: 1.5rem;
+      --spacing-lg: 2rem;
+      --spacing-xl: 3rem;
+      --spacing-2xl: 4rem;
+
+      /* Border Radius */
+      --radius-sm: 0.375rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --radius-2xl: 1.5rem;
+      --radius-full: 9999px;
+
+      /* Shadows */
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    }
+
+    /* ==================== RESET & BASE STYLES ==================== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-blue) 100%);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: var(--spacing-md);
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Background Pattern */
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.1) 0%, transparent 20%);
+      z-index: 0;
+    }
+
+    /* ==================== CONTAINER ==================== */
+    .thankyou-container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border-radius: var(--radius-2xl);
+      padding: var(--spacing-2xl);
+      max-width: 580px;
+      width: 100%;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: var(--shadow-2xl);
+      position: relative;
+      z-index: 1;
+      animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+
+    /* Decorative Elements */
+    .thankyou-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-yellow), var(--accent-yellow), var(--primary-yellow));
+      background-size: 200% 100%;
+      animation: shimmer 3s infinite linear;
+    }
+
+    /* ==================== SUCCESS ICON ==================== */
+    .success-icon {
+      font-size: 5rem;
+      color: var(--primary-yellow);
+      margin-bottom: var(--spacing-lg);
+      display: inline-block;
+      position: relative;
+      animation: bounceIn 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
+    }
+
+    .success-icon::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 120px;
+      height: 120px;
+      background: rgba(255, 215, 0, 0.1);
+      border-radius: 50%;
+      z-index: -1;
+      animation: pulse 2s infinite;
+    }
+
+    /* ==================== TEXT STYLES ==================== */
+    .logo-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      background: var(--primary-yellow);
+      color: var(--dark-blue);
+      padding: var(--spacing-xs) var(--spacing-md);
+      border-radius: var(--radius-full);
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: var(--spacing-md);
+      box-shadow: var(--shadow-md);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: var(--spacing-md);
+      line-height: 1.2;
+      color: var(--white);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .highlight {
+      color: var(--primary-yellow);
+      position: relative;
+      display: inline-block;
+    }
+
+    .highlight::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--primary-yellow);
+      transform: scaleX(0);
+      transform-origin: right;
+      animation: underlineExpand 0.8s 0.5s forwards;
+    }
+
+    .success-message {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--gray-200);
+      margin-bottom: var(--spacing-xl);
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .success-message strong {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    /* ==================== PROGRESS BAR ==================== */
+    .progress-container {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-full);
+      height: 8px;
+      margin-bottom: var(--spacing-xl);
+      overflow: hidden;
+      position: relative;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .progress-bar {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--primary-yellow), var(--accent-yellow));
+      border-radius: var(--radius-full);
+      transition: width 1s linear;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .progress-bar::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.4), 
+        transparent);
+      animation: shimmer 2s infinite;
+    }
+
+    /* ==================== BUTTONS ==================== */
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--spacing-sm);
+      padding: var(--spacing-md) var(--spacing-xl);
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+      border: 2px solid transparent;
+      cursor: pointer;
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .btn-primary {
+      background: var(--primary-yellow);
+      color: var(--dark-blue);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-yellow);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--primary-yellow);
+    }
+
+    .btn-success {
+      background: #25D366;
+      color: var(--white);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-success:hover {
+      background: #128C7E;
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-xl);
+      border-color: #25D366;
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      border: 2px solid var(--primary-yellow);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-secondary:hover {
+      background: var(--primary-yellow);
+      color: var(--dark-blue);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-xl);
+    }
+
+    /* ==================== COUNTDOWN ==================== */
+    .countdown-container {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: var(--radius-xl);
+      padding: var(--spacing-md);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: var(--spacing-lg);
+    }
+
+    .countdown-text {
+      font-size: 0.95rem;
+      color: var(--gray-300);
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .countdown-timer {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary-yellow);
+      font-family: 'Inter', monospace;
+    }
+
+    .timer-label {
+      font-size: 0.875rem;
+      color: var(--gray-300);
+      margin-top: var(--spacing-xs);
+    }
+
+    /* ==================== ANIMATIONS ==================== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounceIn {
+      0% {
+        transform: scale(0.3);
+        opacity: 0;
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      70% {
+        transform: scale(0.9);
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.1;
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.2;
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    @keyframes underlineExpand {
+      from {
+        transform: scaleX(0);
+      }
+      to {
+        transform: scaleX(1);
+      }
+    }
+
+    /* ==================== RESPONSIVE ==================== */
+    @media (max-width: 768px) {
+      .thankyou-container {
+        padding: var(--spacing-xl) var(--spacing-lg);
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .success-icon {
+        font-size: 4rem;
+      }
+      
+      .success-icon::after {
+        width: 100px;
+        height: 100px;
+      }
+      
+      .btn {
+        padding: var(--spacing-md) var(--spacing-lg);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .thankyou-container {
+        padding: var(--spacing-lg) var(--spacing-md);
+      }
+      
+      h1 {
+        font-size: 1.75rem;
+      }
+      
+      .success-message {
+        font-size: 1rem;
+      }
+      
+      .success-icon {
+        font-size: 3.5rem;
+      }
+      
+      .btn {
+        padding: var(--spacing-md);
+      }
+      
+      .countdown-timer {
+        font-size: 1.75rem;
+      }
+    }
+
+    /* ==================== SOCIAL LINKS ==================== */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-xl);
+      padding-top: var(--spacing-lg);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .social-link {
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: var(--primary-yellow);
+      color: var(--dark-blue);
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+  <div class="thankyou-container">
+    <!-- Logo Badge -->
+    <div class="logo-badge">
+      <i class="fas fa-graduation-cap"></i>
+      <span>Othello Institute</span>
+    </div>
+
+    <!-- Success Icon -->
+    <i class="fas fa-circle-check success-icon"></i>
+
+    <!-- Title -->
+    <h1>
+      Welcome to <span class="highlight">Othello Institute</span>!
+    </h1>
+
+    <!-- Message -->
+    <p class="success-message">
+      Your registration has been received successfully! We're excited to have you join our community of tech innovators. 
+      You'll receive a confirmation email and WhatsApp message shortly with all the details you need to get started.
+    </p>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="btn-group">
+      <a href="../index.html" class="btn btn-primary">
+        <i class="fas fa-home"></i>
+        <span>Back to Website</span>
+      </a>
+      
+      <a href="https://chat.whatsapp.com/J8HOfok0udVGQ3KmpWZame?mode=ac_t" class="btn btn-success" id="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i>
+        <span>Join WhatsApp Group</span>
+      </a>
+      
+      <a href="../img/brochure.pdf" class="btn btn-secondary" id="download-btn" download>
+        <i class="fas fa-download"></i>
+        <span>Download Welcome Brochure</span>
+      </a>
+    </div>
+
+    <!-- Countdown -->
+    <div class="countdown-container">
+      <p class="countdown-text">
+        <i class="fas fa-clock"></i>
+        Auto-redirecting to WhatsApp group in:
+      </p>
+      <div class="countdown-timer" id="timer">10</div>
+      <p class="timer-label">seconds</p>
+    </div>
+
+    <!-- Social Links -->
+    <div class="social-links">
+      <a href="https://www.facebook.com/share/19k35odurU/?mibextid=wwXIfr" class="social-link" target="_blank">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://www.instagram.com/othelloinstituteoftechnology" class="social-link" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.linkedin.com/company/othello-institute-of-technology/" class="social-link" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://wa.me/2348127961486" class="social-link" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    // Countdown Timer + Auto Redirect + Progress Bar
+    let timeLeft = 10;
+    const timerEl = document.getElementById("timer");
+    const progressBar = document.getElementById("progress-bar");
+    const whatsappLink = "https://chat.whatsapp.com/J8HOfok0udVGQ3KmpWZame?mode=ac_t";
+
+    const countdown = setInterval(() => {
+      timeLeft--;
+      timerEl.textContent = timeLeft;
+      
+      // Update progress bar (inverted because we're counting down)
+      const progress = ((10 - timeLeft) / 10) * 100;
+      progressBar.style.width = `${progress}%`;
+
+      // Add pulse animation when time is running out
+      if (timeLeft <= 3) {
+        timerEl.style.color = "#ff6b6b";
+        timerEl.style.animation = "pulse 0.5s infinite";
+      }
+
+      if (timeLeft <= 0) {
+        clearInterval(countdown);
+        // Redirect to WhatsApp
+        window.location.href = whatsappLink;
+      }
+    }, 1000);
+
+    // Add click event to override auto-redirect
+    document.getElementById('whatsapp-btn').addEventListener('click', function(e) {
+      clearInterval(countdown);
+      timerEl.textContent = "Redirecting now...";
+      progressBar.style.width = "100%";
+    });
+
+    // Add download tracking
+    document.getElementById('download-btn').addEventListener('click', function() {
+      console.log('Brochure download initiated');
+      // You can add analytics tracking here
+    });
+
+    // Add hover effect for buttons
+    document.querySelectorAll('.btn').forEach(btn => {
+      btn.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-3px) scale(1.02)';
+      });
+      
+      btn.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+
+    // Console greeting
+    console.log(
+      '%c🎓 Registration Successful!',
+      'color: #FFD700; font-size: 18px; font-weight: bold;'
+    );
+    console.log(
+      '%cWelcome to Othello Institute of Technology',
+      'color: #1E40AF; font-size: 14px; font-weight: 600;'
+    );
+  </script>
+</body>
+</html>

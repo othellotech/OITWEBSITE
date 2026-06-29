@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /others/
+Disallow: /private/
+
+Sitemap: https://othelloinstituteoftechnology.com/sitemap.xml

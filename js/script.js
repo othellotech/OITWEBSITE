@@ -452,8 +452,6 @@ const certVerifyForm = document.getElementById('certVerifyForm');
 const verifyResult = document.getElementById('verifyResult');
 
 // ✅ GOOGLE SHEETS API - NO CORS ISSUES!
-const SPREADSHEET_ID = '1Wz9mN4XZKWolmI8qH8XkdBXHa5rpMwfn'; // Your Google Sheet ID from URL
-const API_KEY = 'AIzaSyB4y8fJ9Qf8wL3K3q8Z7V6wX9yP0rT1u2v'; // This is a sample key
 
 // Open modal
 verifyCertLinks.forEach(link => {

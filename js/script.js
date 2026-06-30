@@ -1061,7 +1061,7 @@ function showError(message) {
   // ==================== WHATSAPP FLOATING BUTTON ====================
   const createWhatsAppButton = () => {
     const button = document.createElement('a');
-    button.href = 'https://wa.me/2348127961486?text=Hello%20Othello%20Institute%20I%20want%20to%20learn%20more%20about%20the%20school%20courses.';
+   button.href = 'https://wa.me/2348127961486?text=Hello%20Othello%20Institute!%20I%20would%20like%20to%20learn%20more%20about%20your%20training%20programs%20and%20courses.';
     button.target = '_blank';
     button.rel = 'noopener noreferrer';
     button.innerHTML = '<i class="fab fa-whatsapp"></i>';

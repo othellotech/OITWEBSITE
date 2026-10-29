@@ -1,0 +1,242 @@
+[
+  {
+    "StudentID": "001",
+    "FullName": "Stanley",
+    "Email": "junioronu4@gmail.com",
+    "Phone": "07069568874",
+    "Course": "Data Analysis",
+    "IssueDate": "2025-04-16",
+    "CertificateID": "OIT-2025-00001",
+    "Status": "active"
+  },
+  {
+    "StudentID": "002",
+    "FullName": "Olayeni Eniola Alimon",
+    "Email": "mhizadetoun30@gmail.com",
+    "Phone": "08170751640",
+    "Course": "ICT Fundamentals",
+    "IssueDate": "2025-04-16",
+    "CertificateID": "OIT-2025-00002",
+    "Status": "active"
+  },
+  {
+    "StudentID": "003",
+    "FullName": "Amadike Modester Chidubem",
+    "Email": "amadikechidubem@gmail.com",
+    "Phone": "09138925519",
+    "Course": "UI/UX Designs, Front-end web development",
+    "IssueDate": "2025-04-16",
+    "CertificateID": "OIT-2025-00003",
+    "Status": "active"
+  },
+  {
+    "StudentID": "004",
+    "FullName": "Ishola Clinton kelvin",
+    "Email": "kelvin4real3@gmail.com",
+    "Phone": "09110990922",
+    "Course": "Python Programming & App Dev.",
+    "IssueDate": "2025-04-16",
+    "CertificateID": "OIT-2025-00004",
+    "Status": "active"
+  },
+  {
+    "StudentID": "005",
+    "FullName": "Ebuka Samuel",
+    "Email": "sammyfundz6@gmail.com",
+    "Phone": "09038694020",
+    "Course": "Data Analysis, Python Programming & App Dev.",
+    "IssueDate": "2025-04-16",
+    "CertificateID": "OIT-2025-00005",
+    "Status": "active"
+  },
+  {
+    "StudentID": "006",
+    "FullName": "Ekwueme Best Onyinyechi",
+    "Email": "bestonyinye621@gmail.com",
+    "Phone": "09044303070",
+    "Course": "Full Stack Web Development",
+    "IssueDate": "2025-04-16",
+    "CertificateID": "OIT-2025-00006",
+    "Status": "active"
+  },
+  {
+    "StudentID": "007",
+    "FullName": "Adeleke AbdulMalik Aremu",
+    "Email": "adelekeibrahim135@gmail.com",
+    "Phone": "08026111702",
+    "Course": "UI/UX Designs",
+    "IssueDate": "2025-04-16",
+    "CertificateID": "OIT-2025-00007",
+    "Status": "active"
+  },
+  {
+    "StudentID": "008",
+    "FullName": "YUSUF ABDUL-RAHEEM OLAMIDE",
+    "Email": "yusufraheem98@gmail.com",
+    "Phone": "09018177198",
+    "Course": "Data Analysis",
+    "IssueDate": "2025-04-16",
+    "CertificateID": "OIT-2025-00008",
+    "Status": "active"
+  },
+  {
+    "StudentID": "009",
+    "FullName": "LAWAL KAFARU AKANBI",
+    "Email": "lawgaff@gmail.com",
+    "Phone": "08132778936",
+    "Course": "Data Analysis",
+    "IssueDate": "2025-04-16",
+    "CertificateID": "OIT-2025-00009",
+    "Status": "active"
+  },
+  {
+    "StudentID": "010",
+    "FullName": "Jamiu Afolabi",
+    "Email": "jamiuafolabi100@gmail.com",
+    "Phone": "08186374636",
+    "Course": "Data Analysis",
+    "IssueDate": "2025-04-17",
+    "CertificateID": "OIT-2025-00010",
+    "Status": "active"
+  },
+  {
+    "StudentID": "011",
+    "FullName": "Isioma Emmanuel Isoko",
+    "Email": "isiomaisokotech@gmail.com",
+    "Phone": "08068553474",
+    "Course": "Data Science & AI",
+    "IssueDate": "2025-04-17",
+    "CertificateID": "OIT-2025-00011",
+    "Status": "active"
+  },
+  {
+    "StudentID": "012",
+    "FullName": "Olaleye Ayomide Mercy",
+    "Email": "olaleyeayomide294@gmail.com",
+    "Phone": "07014946312",
+    "Course": "Data Analysis",
+    "IssueDate": "2025-04-17",
+    "CertificateID": "OIT-2025-00012",
+    "Status": "active"
+  },
+  {
+    "StudentID": "013",
+    "FullName": "Oyekan Adeyomade abdulmarteen",
+    "Email": "adeyomadeoyekan22@gmail.com",
+    "Phone": "09026323581",
+    "Course": "Full Stack Web Development",
+    "IssueDate": "2025-04-21",
+    "CertificateID": "OIT-2025-00013",
+    "Status": "active"
+  },
+  {
+    "StudentID": "014",
+    "FullName": "Abegunde Damilare Isaac",
+    "Email": "damilareisaac1998@gmail.com",
+    "Phone": "08148833281",
+    "Course": "Full Stack Web Development",
+    "IssueDate": "2025-04-21",
+    "CertificateID": "OIT-2025-00014",
+    "Status": "active"
+  },
+  {
+    "StudentID": "015",
+    "FullName": "Oyeniyi Oluwatomiwa James",
+    "Email": "oyeniyitomiwa522@gmail.com",
+    "Phone": "09153033347",
+    "Course": "Data Analysis",
+    "IssueDate": "2025-04-21",
+    "CertificateID": "OIT-2025-00015",
+    "Status": "active"
+  },
+  {
+    "StudentID": "016",
+    "FullName": "Durotimi Adewole Agbejoye",
+    "Email": "oluwadurotimi_ade4u@yahoo.com",
+    "Phone": "08137773736",
+    "Course": "Data Analysis, Full Stack Web Development",
+    "IssueDate": "2025-04-21",
+    "CertificateID": "OIT-2025-00016",
+    "Status": "active"
+  },
+  {
+    "StudentID": "017",
+    "FullName": "UZOMA STANLEY",
+    "Email": "klain203@gmail.com",
+    "Phone": "08036939553",
+    "Course": "Data Analysis",
+    "IssueDate": "2025-04-21",
+    "CertificateID": "OIT-2025-00017",
+    "Status": "active"
+  },
+  {
+    "StudentID": "018",
+    "FullName": "Uthman Abdulrafiu",
+    "Email": "abdulrafiuuthman15@gmail.com",
+    "Phone": "09165416287",
+    "Course": "Data Analysis",
+    "IssueDate": "2025-04-21",
+    "CertificateID": "OIT-2025-00018",
+    "Status": "active"
+  },
+  {
+    "StudentID": "019",
+    "FullName": "Okechukwu Anita Ify",
+    "Email": "oaife86@gmail.com",
+    "Phone": "08130318067",
+    "Course": "Data Analysis",
+    "IssueDate": "2025-04-22",
+    "CertificateID": "OIT-2025-00019",
+    "Status": "active"
+  },
+  {
+    "StudentID": "020",
+    "FullName": "Aleem Aramide",
+    "Email": "aleemolaniyi7@gmail.com",
+    "Phone": "09058546155",
+    "Course": "Full Stack Web Development, Graphics Designs",
+    "IssueDate": "2025-04-22",
+    "CertificateID": "OIT-2025-00020",
+    "Status": "active"
+  },
+  {
+    "StudentID": "021",
+    "FullName": "Nwoha Precious chidalu",
+    "Email": "preciousnwoha01@gmail.com",
+    "Phone": "08137015248",
+    "Course": "Data Analysis",
+    "IssueDate": "2025-04-24",
+    "CertificateID": "OIT-2025-00021",
+    "Status": "active"
+  },
+  {
+    "StudentID": "022",
+    "FullName": "Chiagozie Joseph Chukwukaodinaka",
+    "Email": "agozieodinaka06@gmail.com",
+    "Phone": "07058488366",
+    "Course": "Full Stack Web Development",
+    "IssueDate": "2025-04-24",
+    "CertificateID": "OIT-2025-00022",
+    "Status": "active"
+  },
+  {
+    "StudentID": "023",
+    "FullName": "Abiodun Funmilayo Esther",
+    "Email": "abiodundammy329@gmail.com",
+    "Phone": "08145964976",
+    "Course": "ICT Fundamentals, Data Analysis, Full Stack Web Development, Data Science & AI, UI/UX Designs, Python Programming & App Dev., Graphics Designs",
+    "IssueDate": "2025-04-27",
+    "CertificateID": "OIT-2025-00023",
+    "Status": "active"
+  },
+  {
+    "StudentID": "024",
+    "FullName": "Michael",
+    "Email": "michealonoriode33@gmail.com",
+    "Phone": "09048336625",
+    "Course": "Data Analysis",
+    "IssueDate": "2025-04-27",
+    "CertificateID": "OIT-2025-00024",
+    "Status": "active"
+  }
+]

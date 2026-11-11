@@ -866,6 +866,20 @@ function showError(message) {
   }
 
   // ==================== SMOOTH SCROLL FOR ANCHOR LINKS ====================
+  // Offsets for the fixed header (navbar + mobile accreditation strip),
+  // honours reduced-motion, and moves focus to the form heading for #register.
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  function getHeaderOffset() {
+    const strip = document.querySelector('.accred-strip');
+    const nav = document.querySelector('.navbar');
+    let bottom = nav ? nav.getBoundingClientRect().bottom : 80;
+    if (strip && getComputedStyle(strip).display !== 'none') {
+      bottom = Math.max(bottom, strip.getBoundingClientRect().bottom);
+    }
+    return bottom + 12;
+  }
+
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
@@ -876,17 +890,33 @@ function showError(message) {
       const target = document.querySelector(href);
       
       if (target) {
-        const headerOffset = 80;
         const elementPosition = target.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        const offsetPosition = elementPosition + window.pageYOffset - getHeaderOffset();
+        const instant = prefersReducedMotion.matches;
 
         window.scrollTo({
           top: offsetPosition,
-          behavior: 'smooth'
+          behavior: instant ? 'auto' : 'smooth'
         });
+
+        if (href === '#register') {
+          const heading = document.getElementById('register-heading');
+          if (heading) {
+            setTimeout(() => heading.focus({ preventScroll: true }), instant ? 0 : 700);
+          }
+        }
       }
     });
   });
+
+  // ==================== FLOATING ENROL NOW: hide while the form is on screen ====================
+  const enrolFloat = document.getElementById('enrolFloat');
+  const registerSection = document.getElementById('register');
+  if (enrolFloat && registerSection && 'IntersectionObserver' in window) {
+    new IntersectionObserver((entries) => {
+      entries.forEach(entry => enrolFloat.classList.toggle('is-hidden', entry.isIntersecting));
+    }, { threshold: 0.25 }).observe(registerSection);
+  }
 
   // ==================== SCROLL ANIMATIONS ====================
   const observerOptions = {

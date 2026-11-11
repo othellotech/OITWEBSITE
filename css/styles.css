@@ -418,57 +418,10 @@ ul {
   color: var(--primary-yellow);
 }
 
-/* Text Slider */
-.text-slider-container {
-  position: relative;
-  width: 100%;
-  min-height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: var(--spacing-md);
-}
 
-.hero-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 800;
-  line-height: 1.2;
-  color: var(--white);
-  margin-bottom: 0;
-  width: 100%;
-  display: block;
-}
 
-.text-slider {
-  display: block;
-  position: relative;
-  width: 100%;
-  color: var(--primary-yellow);
-  text-align: center;
-  height: auto;
-}
 
-.text-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  line-height: 1;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.text-slide.active {
-  opacity: 1;
-  transform: translateY(0);
-  position: relative;
-}
 
 .hero-subtitle {
   font-size: 1.125rem;
@@ -2007,13 +1960,7 @@ section {
     padding: var(--spacing-xl) 0 var(--spacing-2xl);
   }
 
-  .hero-title {
-    font-size: 2rem;
-  }
 
-  .text-slider-container {
-    min-height: 100px;
-  }
 
   .hero-subtitle {
     font-size: 0.95rem;
@@ -2192,13 +2139,7 @@ section {
     padding: var(--spacing-lg) 0 var(--spacing-xl);
   }
 
-  .hero-title {
-    font-size: 1.5rem;
-  }
 
-  .text-slider-container {
-    min-height: 80px;
-  }
 
   .hero-subtitle {
     font-size: 0.85rem;
@@ -2405,7 +2346,6 @@ section {
 }
 
 /* SEO additions */
-.hero-h1{font-size:clamp(1rem,2.2vw,1.35rem);font-weight:600;color:var(--white);letter-spacing:.02em;margin-bottom:var(--spacing-md);opacity:.95}
 .about-section{padding:80px 0;background:#fff}
 .about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:40px}
 .about-card{background:#fafafa;border:1px solid #eee;border-top:4px solid var(--primary-yellow);border-radius:12px;padding:28px}
@@ -2447,3 +2387,227 @@ section {
 .fee-text{font-size:.9rem;color:#4b5563;line-height:1.5}
 .fee-includes ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:8px}
 .fee-includes li{font-size:.95rem}.fee-includes li i{color:#16a34a;margin-right:8px}
+
+
+/* =====================================================================
+   OIT WEBSITE UPDATE (feature/oit-improvements)
+   Hero headline, SDCC accreditation, learning pillars, values preview,
+   Why Choose extras, floating ENROL NOW button. Uses existing tokens.
+   ===================================================================== */
+
+:root { --accred-strip-height: 0px; }
+
+body {
+  padding-top: calc(var(--countdown-height) + var(--navbar-height) + var(--accred-strip-height));
+}
+html {
+  scroll-padding-top: calc(var(--countdown-height) + var(--navbar-height) + var(--accred-strip-height) + 20px);
+}
+.hero-slider {
+  min-height: calc(100vh - var(--countdown-height) - var(--navbar-height) - var(--accred-strip-height));
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* ---------- Hero: single static headline ---------- */
+.hero-headline {
+  font-size: clamp(2rem, 5.2vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--primary-yellow);
+  margin: 0;
+  max-width: 14em;
+}
+.hero-subtitle { padding-top: 0; }
+
+/* ---------- SDCC accreditation: header ---------- */
+.header-accred {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  padding-left: 14px;
+  border-left: 1px solid var(--gray-200);
+}
+.header-accred img { height: 40px; width: auto; }
+.accred-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--gray-700);
+  max-width: 128px;
+}
+.accred-strip { display: none; }
+
+/* ---------- SDCC accreditation: footer ---------- */
+.footer-accred { display: flex; align-items: center; gap: 12px; margin-bottom: var(--spacing-md); }
+.footer-accred-badge {
+  display: inline-flex; flex-shrink: 0; background: var(--white);
+  border-radius: 8px; padding: 6px 10px;
+}
+.footer-accred-badge img { height: 32px; width: auto; }
+.footer-accred-label { font-size: 0.78rem; line-height: 1.35; color: var(--gray-300); max-width: 150px; }
+
+/* ---------- Homepage: intro, pillars, values preview ---------- */
+.about-intro { max-width: 760px; margin: var(--spacing-md) auto 0; text-align: left; }
+.about-intro p { color: var(--gray-600); font-size: 1.05rem; line-height: 1.8; margin-bottom: var(--spacing-sm); }
+.pillars-section { background: var(--gray-50); }
+.pillars-section .why-card { background: var(--white); }
+
+.values-preview-title {
+  text-align: center; font-size: 1.35rem; font-weight: 700; color: var(--gray-900);
+  margin: var(--spacing-2xl) 0 var(--spacing-md);
+}
+.values-preview {
+  list-style: none; display: grid; gap: 16px; max-width: 1100px; margin: 0 auto; padding: 0;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+.value-tile {
+  background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px;
+  padding: 18px 12px; text-align: center;
+}
+.value-tile i { font-size: 1.4rem; color: var(--primary-blue); margin-bottom: 8px; display: block; }
+.value-tile h4 { font-size: 0.95rem; font-weight: 700; color: var(--gray-900); margin-bottom: 4px; }
+.value-tile p { font-size: 0.82rem; line-height: 1.45; color: var(--gray-600); margin: 0; }
+.values-preview-cta { text-align: center; margin-top: var(--spacing-lg); }
+
+/* ---------- Courses / Why Choose additions ---------- */
+.course-more {
+  display: block; text-align: center; font-weight: 600; font-size: 0.92rem;
+  color: var(--primary-blue); text-decoration: underline; margin: 6px 0 14px;
+}
+.course-more:hover { color: var(--accent-blue); }
+.subsection-title {
+  text-align: center; font-size: 1.5rem; font-weight: 700; color: var(--gray-900);
+  margin: var(--spacing-2xl) 0 var(--spacing-lg);
+}
+.benefits-grid { max-width: 880px; margin: 0 auto; }
+.career-note {
+  display: flex; gap: 14px; align-items: flex-start; max-width: 900px;
+  margin: var(--spacing-2xl) auto 0; padding: 18px 22px;
+  background: rgba(255, 215, 0, 0.15); border-left: 4px solid var(--primary-yellow); border-radius: 8px;
+}
+.career-note i { color: #b8860b; font-size: 1.25rem; margin-top: 3px; }
+.career-note p { margin: 0; color: var(--gray-800); line-height: 1.7; }
+
+/* ---------- Floating ENROL NOW ---------- */
+.enrol-float {
+  position: fixed; right: 0; top: 55%; transform: translateY(-50%); z-index: 900;
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 18px 14px 16px;
+  background: var(--primary-yellow); color: var(--dark-blue);
+  border-radius: 999px 0 0 999px;
+  box-shadow: -4px 6px 18px rgba(0, 0, 0, 0.2);
+  font-weight: 800; letter-spacing: 0.03em; overflow: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease, background 0.2s ease;
+  animation: enrolPulse 9s ease-in-out infinite;
+}
+.enrol-float:hover, .enrol-float:focus-visible { background: var(--accent-yellow); animation-play-state: paused; }
+.enrol-float:focus-visible { outline: 3px solid var(--dark-blue); outline-offset: 3px; }
+.enrol-float i { font-size: 1.25rem; }
+.enrol-float-text { display: flex; flex-direction: column; line-height: 1.2; white-space: nowrap; }
+.enrol-float-text strong { font-size: 0.9rem; }
+.enrol-float-text small {
+  display: block; font-size: 0.72rem; font-weight: 600;
+  max-width: 0; max-height: 0; opacity: 0; overflow: hidden;
+  transition: max-width 0.35s ease, max-height 0.35s ease, opacity 0.25s ease;
+}
+.enrol-float:hover small, .enrol-float:focus-visible small { max-width: 220px; max-height: 20px; opacity: 1; }
+.enrol-float.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+@keyframes enrolPulse {
+  0%, 84%, 100% { box-shadow: -4px 6px 18px rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(255, 215, 0, 0); }
+  88% { box-shadow: -4px 6px 18px rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(255, 215, 0, 0.6); }
+  98% { box-shadow: -4px 6px 18px rgba(0, 0, 0, 0.2), 0 0 0 16px rgba(255, 215, 0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .enrol-float { animation: none; transition: none; }
+  .enrol-float-text small { transition: none; }
+}
+
+/* ---------- Header: desktop (>=1280px) fits OIT logo, 11 links and SDCC ---------- */
+@media (min-width: 1280px) {
+  .nav-container { gap: 14px; }
+  .logo { gap: 10px; }
+  .logo-text { white-space: normal; font-size: 0.9rem; line-height: 1.15; max-width: 150px; }
+  .nav-menu { margin-right: 0; }
+  .nav-menu ul { gap: 2px; }
+  .nav-menu a { font-size: 0.78rem; padding: 6px 7px; }
+  .nav-cta { font-size: 0.78rem !important; padding: 6px 12px !important; margin-left: 4px; }
+  .header-accred { padding-left: 12px; gap: 8px; }
+  .header-accred img { height: 34px; }
+  .header-accred .accred-label { font-size: 0.64rem; max-width: 112px; }
+}
+
+/* ---------- Header: below 1280px uses the hamburger menu ---------- */
+@media (max-width: 1279px) {
+  .nav-container { gap: var(--spacing-sm); }
+  .header-accred { margin-left: auto; }
+  .mobile-toggle { display: block; font-size: 1.25rem; }
+  .nav-menu {
+    position: fixed;
+    top: calc(var(--countdown-height) + var(--navbar-height) + var(--accred-strip-height));
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - var(--countdown-height) - var(--navbar-height) - var(--accred-strip-height));
+    background: var(--white);
+    padding: var(--spacing-lg);
+    margin-right: 0;
+    box-shadow: var(--shadow-xl);
+    transition: left 0.3s ease-in-out;
+    overflow-y: auto;
+    z-index: 999;
+  }
+  .nav-menu.active { left: 0; }
+  .nav-menu ul { flex-direction: column; align-items: stretch; gap: 0; flex-wrap: wrap; }
+  .nav-menu li { border-bottom: 1px solid var(--gray-100); }
+  .nav-menu a { padding: var(--spacing-md); display: block; font-size: 1rem; white-space: normal; }
+  .nav-cta { text-align: center; padding: 14px 20px !important; margin-top: var(--spacing-sm); font-size: 1rem !important; }
+}
+
+/* Tablet: menu opens as a drawer on the right instead of full width */
+@media (min-width: 769px) and (max-width: 1279px) {
+  .nav-menu { left: auto; right: -420px; width: 380px; transition: right 0.3s ease-in-out; }
+  .nav-menu.active { left: auto; right: 0; }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+  :root { --accred-strip-height: 30px; }
+
+  .header-accred { display: none; }
+  .accred-strip {
+    display: flex; position: fixed; left: 0; right: 0;
+    top: calc(var(--countdown-height) + var(--navbar-height));
+    height: var(--accred-strip-height);
+    align-items: center; justify-content: center; gap: 8px;
+    background: var(--white); border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    z-index: 998; padding: 0 var(--spacing-sm);
+  }
+  .accred-strip img { height: 22px; width: auto; }
+  .accred-strip .accred-label { font-size: clamp(0.56rem, 2.7vw, 0.68rem); max-width: none; white-space: nowrap; }
+
+  .nav-menu {
+    top: calc(var(--countdown-height) + var(--navbar-height) + var(--accred-strip-height));
+    height: calc(100vh - var(--countdown-height) - var(--navbar-height) - var(--accred-strip-height));
+  }
+
+  .hero-headline { font-size: clamp(1.75rem, 8vw, 2.25rem); }
+
+  .career-note { flex-direction: column; }
+}
+
+/* Floating ENROL NOW: compact bottom-left pill on tablet and mobile */
+@media (max-width: 1023px) {
+  .enrol-float {
+    top: auto; bottom: 16px; left: 16px; right: auto; transform: none;
+    border-radius: 999px; padding: 12px 18px; min-height: 48px;
+  }
+  .enrol-float-text small { display: none; }
+  .footer { padding-bottom: calc(var(--spacing-lg) + 64px); }
+}

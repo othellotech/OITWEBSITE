@@ -2462,13 +2462,14 @@ html {
   margin: var(--spacing-2xl) 0 var(--spacing-md);
 }
 .values-preview {
-  list-style: none; display: grid; gap: 16px; max-width: 1100px; margin: 0 auto; padding: 0;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin: 0 auto; padding: 0;
 }
 .value-tile {
+  flex: 1 1 150px; max-width: 176px;
   background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px;
   padding: 18px 12px; text-align: center;
 }
+.about-card .values-list { list-style: disc; padding-left: 22px; }
 .value-tile i { font-size: 1.4rem; color: var(--primary-blue); margin-bottom: 8px; display: block; }
 .value-tile h4 { font-size: 0.95rem; font-weight: 700; color: var(--gray-900); margin-bottom: 4px; }
 .value-tile p { font-size: 0.82rem; line-height: 1.45; color: var(--gray-600); margin: 0; }

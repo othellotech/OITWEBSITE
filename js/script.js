@@ -886,6 +886,36 @@ function showError(message) {
     return bottom + 12;
   }
 
+  // Scrolls to a target under the fixed header. Lazy-loaded images can change the
+  // page height while (or just after) scrolling, so check again once the scroll
+  // settles and correct the position if the target has moved.
+  function scrollToTarget(target, instant, triesLeft, done) {
+    const offBy = () => target.getBoundingClientRect().top - getHeaderOffset();
+    const jump = (behavior) => window.scrollTo({
+      top: target.getBoundingClientRect().top + window.pageYOffset - getHeaderOffset(),
+      behavior: behavior
+    });
+
+    let settled = false;
+    const afterScroll = () => {
+      if (settled) return;
+      settled = true;
+      if (Math.abs(offBy()) > 8 && triesLeft > 0) {
+        scrollToTarget(target, instant, triesLeft - 1, done);
+        return;
+      }
+      // Final check shortly after, to catch images that finished loading late.
+      setTimeout(() => {
+        if (Math.abs(offBy()) > 8) jump('auto');
+        if (done) done();
+      }, 700);
+    };
+
+    jump(instant ? 'auto' : 'smooth');
+    if (!instant && 'onscrollend' in window) window.addEventListener('scrollend', afterScroll, { once: true });
+    setTimeout(afterScroll, instant ? 300 : 1500);
+  }
+
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
@@ -896,21 +926,13 @@ function showError(message) {
       const target = document.querySelector(href);
       
       if (target) {
-        const elementPosition = target.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - getHeaderOffset();
         const instant = prefersReducedMotion.matches;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: instant ? 'auto' : 'smooth'
-        });
-
-        if (href === '#register') {
-          const heading = document.getElementById('register-heading');
-          if (heading) {
-            setTimeout(() => heading.focus({ preventScroll: true }), instant ? 0 : 700);
+        scrollToTarget(target, instant, 5, () => {
+          if (href === '#register') {
+            const heading = document.getElementById('register-heading');
+            if (heading) heading.focus({ preventScroll: true });
           }
-        }
+        });
       }
     });
   });

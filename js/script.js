@@ -462,6 +462,12 @@ verifyCertLinks.forEach(link => {
   });
 });
 
+// Open the modal when arriving from another page via /#verify-certificate
+if (certModal && window.location.hash === '#verify-certificate') {
+  certModal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
 // Close modal
 modalClose.addEventListener('click', () => {
   certModal.classList.remove('active');

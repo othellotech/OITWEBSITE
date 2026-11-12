@@ -1,0 +1,123 @@
+/* =====================================================================
+   OIT inner pages (About + course pages). Loaded AFTER styles.css and
+   reuses its tokens, header, footer, buttons and floating ENROL NOW.
+   ===================================================================== */
+
+/* ---------- Page hero ---------- */
+.page-hero {
+  background: linear-gradient(135deg, var(--dark-blue), rgba(30, 64, 175, 0.95));
+  color: var(--white);
+  padding: var(--spacing-2xl) 0 var(--spacing-xl);
+}
+.breadcrumb { font-size: 0.85rem; color: var(--gray-300); margin-bottom: var(--spacing-md); }
+.breadcrumb ol { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+.breadcrumb li + li::before { content: "/"; margin-right: 6px; color: var(--gray-300); }
+.breadcrumb a { text-decoration: underline; }
+.breadcrumb a:hover { color: var(--primary-yellow); }
+.page-hero h1 {
+  font-size: clamp(1.9rem, 4.4vw, 3rem); font-weight: 800; line-height: 1.15;
+  color: var(--primary-yellow); max-width: 18em; margin-bottom: var(--spacing-sm);
+}
+.page-hero .lead { font-size: 1.15rem; line-height: 1.7; color: var(--gray-200); max-width: 46rem; }
+.hero-chips { display: flex; flex-wrap: wrap; gap: 10px; margin: var(--spacing-md) 0; list-style: none; }
+.hero-chips li {
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: var(--radius-full);
+  border: 2px solid var(--primary-yellow); background: rgba(255, 255, 255, 0.08); font-weight: 600; font-size: 0.9rem;
+}
+.hero-chips i { color: var(--primary-yellow); }
+.page-hero .hero-cta { justify-content: flex-start; margin-top: var(--spacing-md); }
+
+/* ---------- Layout ---------- */
+.page-main { padding: var(--spacing-2xl) 0; background: var(--white); }
+.course-layout { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: var(--spacing-2xl); align-items: start; }
+.page-section { margin-bottom: var(--spacing-2xl); padding: 0; }
+.page-section:last-child { margin-bottom: 0; }
+.page-section h2 {
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem); font-weight: 800; color: var(--gray-900);
+  margin-bottom: var(--spacing-md); padding-bottom: 10px; border-bottom: 3px solid var(--primary-yellow); display: inline-block;
+}
+.page-section h3 { font-size: 1.15rem; font-weight: 700; color: var(--gray-900); margin: var(--spacing-md) 0 var(--spacing-xs); }
+.page-section p { color: var(--gray-700); line-height: 1.8; margin-bottom: var(--spacing-sm); max-width: 46rem; }
+.tick-list { list-style: none; display: grid; gap: 10px; max-width: 46rem; }
+.tick-list li { display: flex; gap: 12px; color: var(--gray-700); line-height: 1.6; }
+.tick-list i { color: #16a34a; margin-top: 4px; flex-shrink: 0; }
+
+/* ---------- Curriculum ---------- */
+.module-list { list-style: none; display: grid; gap: 16px; }
+.module { background: var(--gray-50); border: 1px solid var(--gray-200); border-left: 5px solid var(--primary-blue); border-radius: 12px; padding: 18px 20px; }
+.module-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+.module-weeks { font-size: 0.8rem; font-weight: 700; color: var(--dark-blue); background: var(--primary-yellow); padding: 3px 12px; border-radius: var(--radius-full); white-space: nowrap; }
+.module h3 { margin: 0; font-size: 1.1rem; }
+.module ul { list-style: disc; padding-left: 20px; color: var(--gray-700); line-height: 1.7; }
+.module ul li { margin-bottom: 2px; }
+.pathways { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-top: 12px; }
+.pathway { background: var(--white); border: 1px dashed var(--gray-300); border-radius: 10px; padding: 12px 16px; }
+.pathway h4 { font-size: 0.95rem; font-weight: 700; color: var(--primary-blue); margin-bottom: 4px; }
+.pathway ul { list-style: disc; padding-left: 18px; font-size: 0.92rem; }
+.note-box {
+  background: rgba(255, 215, 0, 0.15); border-left: 4px solid var(--primary-yellow); border-radius: 8px;
+  padding: 14px 18px; color: var(--gray-800); line-height: 1.7; max-width: 46rem; margin-top: var(--spacing-sm);
+}
+.note-box p { margin: 0; color: inherit; }
+
+/* ---------- Tools ---------- */
+.chip-list { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
+.chip-list li { background: var(--light-blue); color: var(--dark-blue); font-weight: 600; font-size: 0.92rem; padding: 8px 16px; border-radius: var(--radius-full); }
+
+/* ---------- Sidebar ---------- */
+.glance { position: sticky; top: calc(var(--countdown-height) + var(--navbar-height) + var(--accred-strip-height) + 20px); }
+.glance-card { background: var(--white); border: 1px solid var(--gray-200); border-top: 4px solid var(--primary-yellow); border-radius: 14px; padding: 22px; box-shadow: var(--shadow-lg); }
+.glance-card h2 { font-size: 1.15rem; font-weight: 800; margin-bottom: var(--spacing-sm); }
+.glance-list { list-style: none; display: grid; gap: 10px; margin-bottom: var(--spacing-sm); font-size: 0.93rem; color: var(--gray-700); }
+.glance-list i { color: var(--primary-blue); width: 20px; }
+.glance-card .price-box { margin: 12px 0; }
+.glance-card .btn { width: 100%; justify-content: center; padding: 14px 20px; }
+.glance-card .btn + .btn { margin-top: 10px; }
+.glance-note { font-size: 0.82rem; color: var(--gray-600); line-height: 1.5; margin-top: 12px; }
+
+/* ---------- FAQ (native details) ---------- */
+.page-faq details { border: 1px solid var(--gray-200); border-radius: 10px; margin-bottom: 10px; background: var(--white); max-width: 46rem; }
+.page-faq summary { cursor: pointer; padding: 14px 18px; font-weight: 600; color: var(--gray-900); list-style: none; display: flex; justify-content: space-between; gap: 12px; }
+.page-faq summary::-webkit-details-marker { display: none; }
+.page-faq summary::after { content: "+"; font-weight: 800; color: var(--primary-blue); }
+.page-faq details[open] summary::after { content: "\2212"; }
+.page-faq details p { padding: 0 18px 14px; margin: 0; }
+
+/* ---------- Related courses + CTA ---------- */
+.related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px; }
+.related-card { display: block; background: var(--gray-50); border: 2px solid transparent; border-radius: 12px; padding: 18px; transition: var(--transition); }
+.related-card:hover, .related-card:focus-visible { border-color: var(--primary-yellow); background: var(--white); box-shadow: var(--shadow-md); }
+.related-card h3 { margin: 0 0 6px; font-size: 1.05rem; }
+.related-card p { margin: 0 0 8px; font-size: 0.92rem; }
+.related-card span { font-weight: 600; color: var(--primary-blue); font-size: 0.9rem; }
+.page-cta { background: linear-gradient(135deg, var(--dark-blue), rgba(30, 64, 175, 0.95)); color: var(--white); padding: var(--spacing-2xl) 0; text-align: center; }
+.page-cta h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 800; margin-bottom: var(--spacing-xs); }
+.page-cta p { color: var(--gray-200); margin-bottom: var(--spacing-md); }
+.page-cta .hero-cta { justify-content: center; }
+.enrol-steps { list-style: none; display: grid; gap: 12px; max-width: 46rem; counter-reset: step; }
+.enrol-steps li { counter-increment: step; display: flex; gap: 14px; align-items: flex-start; color: var(--gray-700); line-height: 1.6; }
+.enrol-steps li::before { content: counter(step); flex-shrink: 0; width: 32px; height: 32px; border-radius: 50%; background: var(--primary-yellow); color: var(--dark-blue); font-weight: 800; display: flex; align-items: center; justify-content: center; }
+
+/* ---------- About page ---------- */
+.about-page-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.about-page-grid .about-card p { margin-bottom: 0; }
+.pillar-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: var(--spacing-md); }
+.values-full { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.value-card { background: var(--gray-50); border: 1px solid var(--gray-200); border-top: 4px solid var(--primary-yellow); border-radius: 12px; padding: 24px; }
+.value-card i { width: 48px; height: 48px; border-radius: 50%; background: var(--primary-blue); color: var(--white); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; margin-bottom: 12px; }
+.value-card h3 { margin: 0 0 6px; font-size: 1.2rem; }
+.value-card p { margin: 0; }
+.page-section.wide p { max-width: 52rem; }
+.contact-lines { list-style: none; display: grid; gap: 10px; color: var(--gray-700); }
+.contact-lines i { color: var(--primary-blue); width: 22px; }
+.contact-lines a { text-decoration: underline; }
+
+@media (max-width: 1023px) {
+  .course-layout { grid-template-columns: 1fr; }
+  .glance { position: static; order: -1; }
+}
+@media (max-width: 768px) {
+  .page-hero { padding: var(--spacing-xl) 0; }
+  .page-main { padding: var(--spacing-xl) 0; }
+  .page-hero .hero-cta .btn { width: 100%; justify-content: center; }
+}

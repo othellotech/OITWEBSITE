@@ -2423,34 +2423,6 @@ html {
 }
 .hero-subtitle { padding-top: 0; }
 
-/* ---------- SDCC accreditation: header ---------- */
-.header-accred {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  padding-left: 14px;
-  border-left: 1px solid var(--gray-200);
-}
-.header-accred img { height: 40px; width: auto; }
-.accred-label {
-  font-size: 0.68rem;
-  font-weight: 600;
-  line-height: 1.25;
-  color: var(--gray-700);
-  max-width: 128px;
-}
-.accred-strip { display: none; }
-
-/* ---------- SDCC accreditation: footer ---------- */
-.footer-accred { display: flex; align-items: center; gap: 12px; margin-bottom: var(--spacing-md); }
-.footer-accred-badge {
-  display: inline-flex; flex-shrink: 0; background: var(--white);
-  border-radius: 8px; padding: 6px 10px;
-}
-.footer-accred-badge img { height: 32px; width: auto; }
-.footer-accred-label { font-size: 0.78rem; line-height: 1.35; color: var(--gray-300); max-width: 150px; }
-
 /* ---------- Homepage: intro, pillars, values preview ---------- */
 .about-intro { max-width: 760px; margin: var(--spacing-md) auto 0; text-align: left; }
 .about-intro p { color: var(--gray-600); font-size: 1.05rem; line-height: 1.8; margin-bottom: var(--spacing-sm); }
@@ -2531,72 +2503,10 @@ html {
   .enrol-float-text small { transition: none; }
 }
 
-/* ---------- Header: desktop (>=1280px) fits OIT logo, 11 links and SDCC ---------- */
-@media (min-width: 1280px) {
-  .nav-container { gap: 14px; }
-  .logo { gap: 10px; }
-  .logo-text { white-space: normal; font-size: 0.9rem; line-height: 1.15; max-width: 150px; }
-  .nav-menu { margin-right: 0; }
-  .nav-menu ul { gap: 2px; }
-  .nav-menu a { font-size: 0.78rem; padding: 6px 7px; }
-  .nav-cta { font-size: 0.78rem !important; padding: 6px 12px !important; margin-left: 4px; }
-  .header-accred { padding-left: 12px; gap: 8px; }
-  .header-accred img { height: 34px; }
-  .header-accred .accred-label { font-size: 0.64rem; max-width: 112px; }
-}
-
-/* ---------- Header: below 1280px uses the hamburger menu ---------- */
-@media (max-width: 1279px) {
-  .nav-container { gap: var(--spacing-sm); }
-  .header-accred { margin-left: auto; }
-  .mobile-toggle { display: block; font-size: 1.25rem; }
-  .nav-menu {
-    position: fixed;
-    top: calc(var(--countdown-height) + var(--navbar-height) + var(--accred-strip-height));
-    left: -100%;
-    width: 100%;
-    height: calc(100vh - var(--countdown-height) - var(--navbar-height) - var(--accred-strip-height));
-    background: var(--white);
-    padding: var(--spacing-lg);
-    margin-right: 0;
-    box-shadow: var(--shadow-xl);
-    transition: left 0.3s ease-in-out;
-    overflow-y: auto;
-    z-index: 999;
-  }
-  .nav-menu.active { left: 0; }
-  .nav-menu ul { flex-direction: column; align-items: stretch; gap: 0; flex-wrap: wrap; }
-  .nav-menu li { border-bottom: 1px solid var(--gray-100); }
-  .nav-menu a { padding: var(--spacing-md); display: block; font-size: 1rem; white-space: normal; }
-  .nav-cta { text-align: center; padding: 14px 20px !important; margin-top: var(--spacing-sm); font-size: 1rem !important; }
-}
-
-/* Tablet: menu opens as a drawer on the right instead of full width */
-@media (min-width: 769px) and (max-width: 1279px) {
-  .nav-menu { left: auto; right: -420px; width: 380px; transition: right 0.3s ease-in-out; }
-  .nav-menu.active { left: auto; right: 0; }
-}
-
 /* ---------- Mobile ---------- */
 @media (max-width: 768px) {
-  :root { --accred-strip-height: 30px; }
 
-  .header-accred { display: none; }
-  .accred-strip {
-    display: flex; position: fixed; left: 0; right: 0;
-    top: calc(var(--countdown-height) + var(--navbar-height));
-    height: var(--accred-strip-height);
-    align-items: center; justify-content: center; gap: 8px;
-    background: var(--white); border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    z-index: 998; padding: 0 var(--spacing-sm);
-  }
-  .accred-strip img { height: 22px; width: auto; }
-  .accred-strip .accred-label { font-size: clamp(0.56rem, 2.7vw, 0.68rem); max-width: none; white-space: nowrap; }
 
-  .nav-menu {
-    top: calc(var(--countdown-height) + var(--navbar-height) + var(--accred-strip-height));
-    height: calc(100vh - var(--countdown-height) - var(--navbar-height) - var(--accred-strip-height));
-  }
 
   .hero-headline { font-size: clamp(1.75rem, 8vw, 2.25rem); }
 
@@ -2611,4 +2521,163 @@ html {
   }
   .enrol-float-text small { display: none; }
   .footer { padding-bottom: calc(var(--spacing-lg) + 64px); }
+}
+
+
+/* =====================================================================
+   HEADER, NAV, ACCREDITATION BADGE AND FOOTER REDESIGN
+   Grouped dropdown menus, prominent SDCC badge, structured footer.
+   ===================================================================== */
+
+/* ---------- Navbar ---------- */
+.nav-container { gap: 20px; }
+.nav-menu { margin-left: auto; }
+.nav-menu .nav-list { display: flex; align-items: center; gap: 2px; flex-wrap: nowrap; list-style: none; margin: 0; padding: 0; }
+.nav-menu .nav-list > li { position: relative; flex-shrink: 0; }
+.nav-menu .nav-link {
+  display: inline-flex; align-items: center; gap: 6px; padding: 10px 13px;
+  font-family: inherit; font-size: 0.93rem; font-weight: 600; color: var(--gray-800);
+  background: none; border: 0; border-radius: 10px; cursor: pointer; white-space: nowrap;
+  transition: var(--transition);
+}
+.nav-menu .nav-link i { font-size: 0.62rem; transition: transform 0.2s ease; }
+.nav-menu .nav-link:hover,
+.nav-menu .nav-link:focus-visible,
+.nav-menu .has-dropdown.open > .nav-link { color: var(--primary-blue); background: rgba(30, 64, 175, 0.07); }
+.nav-menu .nav-link:focus-visible { outline: 2px solid var(--primary-blue); outline-offset: 2px; }
+.has-dropdown.open > .nav-link i { transform: rotate(180deg); }
+.nav-menu .nav-cta-item { margin-left: 8px; }
+
+/* ---------- Dropdown panels ---------- */
+.nav-menu .dropdown {
+  display: none; position: absolute; top: calc(100% + 10px); left: 0; z-index: 1100;
+  min-width: 300px; padding: 10px; background: var(--white);
+  border: 1px solid var(--gray-200); border-radius: 14px; box-shadow: var(--shadow-xl);
+}
+.nav-menu .dropdown::before { content: ""; position: absolute; left: 0; right: 0; top: -12px; height: 12px; }
+.nav-menu .dropdown-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; align-items: stretch; flex-wrap: wrap; }
+.nav-menu .dropdown a {
+  display: block; padding: 10px 14px; border-radius: 10px; white-space: normal;
+  font-size: 0.92rem; color: var(--gray-900); background: none;
+}
+.nav-menu .dropdown a strong { display: block; font-weight: 700; }
+.nav-menu .dropdown a span { display: block; margin-top: 2px; font-size: 0.78rem; font-weight: 500; color: var(--gray-600); line-height: 1.35; }
+.nav-menu .dropdown a:hover,
+.nav-menu .dropdown a:focus-visible { background: rgba(30, 64, 175, 0.07); color: var(--primary-blue); }
+.nav-menu .dropdown a.dropdown-all {
+  margin-top: 6px; border-top: 1px solid var(--gray-100); border-radius: 0 0 10px 10px;
+  font-weight: 700; color: var(--primary-blue); display: flex; align-items: center; gap: 8px;
+}
+.nav-menu .dropdown-courses { min-width: 590px; left: -60px; grid-template-columns: 310px 1fr; gap: 14px; }
+.nav-menu .dropdown a.dropdown-feature {
+  display: flex; flex-direction: column; gap: 4px; padding: 10px; background: var(--gray-50);
+  border: 1px solid var(--gray-100); border-radius: 12px;
+}
+.dropdown-feature img { width: 100%; height: 112px; object-fit: cover; border-radius: 8px; margin-bottom: 4px; }
+.nav-menu .dropdown a.dropdown-feature .dropdown-eyebrow {
+  align-self: flex-start; background: var(--primary-yellow); color: var(--dark-blue);
+  font-size: 0.66rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 3px 10px; border-radius: var(--radius-full); margin: 0;
+}
+
+/* ---------- SDCC accreditation: header badge ---------- */
+.header-accred {
+  display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+  padding-left: 16px; border-left: 1px solid var(--gray-200);
+}
+.header-accred img { width: 50px; height: auto; aspect-ratio: 210 / 207; flex-shrink: 0; }
+.accred-label { font-size: 0.76rem; font-weight: 700; line-height: 1.25; color: var(--dark-blue); max-width: 150px; }
+.accred-strip { display: none; }
+
+/* ---------- Desktop behaviour (hover / keyboard focus opens menus) ---------- */
+@media (min-width: 1180px) {
+  .has-dropdown:hover > .dropdown,
+  .has-dropdown:focus-within > .dropdown,
+  .has-dropdown.open > .dropdown { display: block; }
+  .has-dropdown:hover > .dropdown-courses,
+  .has-dropdown:focus-within > .dropdown-courses,
+  .has-dropdown.open > .dropdown-courses { display: grid; }
+  .has-dropdown:hover > .nav-link { color: var(--primary-blue); background: rgba(30, 64, 175, 0.07); }
+  .has-dropdown:hover > .nav-link i { transform: rotate(180deg); }
+}
+@media (min-width: 1180px) and (max-width: 1279px) {
+  .logo-text { font-size: 0.95rem; }
+  .nav-menu .nav-link { padding: 10px 10px; font-size: 0.9rem; }
+  .nav-container { gap: 14px; }
+  .accred-label { font-size: 0.72rem; max-width: 128px; }
+  .header-accred { padding-left: 12px; }
+}
+
+/* ---------- Tablet and mobile: slide-out menu with accordions ---------- */
+@media (max-width: 1179px) {
+  .nav-container { gap: 12px; }
+  .header-accred { margin-left: auto; }
+  .mobile-toggle { display: block; font-size: 1.35rem; }
+  .nav-menu {
+    position: fixed; margin: 0; width: 100%;
+    top: calc(var(--countdown-height) + var(--navbar-height) + var(--accred-strip-height));
+    height: calc(100vh - var(--countdown-height) - var(--navbar-height) - var(--accred-strip-height));
+    left: -100%; background: var(--white); padding: 8px 22px 40px;
+    box-shadow: var(--shadow-xl); transition: left 0.3s ease-in-out; overflow-y: auto; z-index: 999;
+  }
+  .nav-menu.active { left: 0; }
+  .nav-menu { display: block; }
+  .nav-menu .nav-list { flex-direction: column; align-items: stretch; gap: 0; width: 100%; }
+  .nav-menu .nav-list > li { border-bottom: 1px solid var(--gray-100); }
+  .nav-menu .nav-link { width: 100%; justify-content: space-between; padding: 17px 6px; font-size: 1.05rem; border-radius: 0; }
+  .nav-menu .nav-link i { font-size: 0.75rem; }
+  .nav-menu .dropdown {
+    position: static; min-width: 0; padding: 0 0 12px 6px; background: none; border: 0; box-shadow: none; border-radius: 0;
+  }
+  .nav-menu .dropdown::before { display: none; }
+  .has-dropdown.open > .dropdown,
+  .has-dropdown.open > .dropdown-courses { display: block; }
+  .nav-menu .dropdown a.dropdown-feature { display: none; }
+  .nav-menu .dropdown a { padding: 11px 12px; }
+  .nav-menu .nav-cta-item { border-bottom: 0; margin: 0; padding-top: 20px; }
+  .nav-menu .nav-cta { display: block; text-align: center; padding: 15px 20px !important; font-size: 1rem !important; }
+}
+@media (min-width: 769px) and (max-width: 1179px) {
+  .nav-menu { width: 400px; left: auto; right: -440px; transition: right 0.3s ease-in-out; }
+  .nav-menu.active { left: auto; right: 0; }
+}
+
+/* ---------- Mobile: accreditation strip under the header ---------- */
+@media (max-width: 768px) {
+  :root { --accred-strip-height: 40px; }
+  .header-accred { display: none; }
+  .accred-strip {
+    display: flex; position: fixed; left: 0; right: 0;
+    top: calc(var(--countdown-height) + var(--navbar-height)); height: var(--accred-strip-height);
+    align-items: center; justify-content: center; gap: 9px; padding: 0 12px;
+    background: var(--white); border-bottom: 1px solid rgba(0, 0, 0, 0.06); z-index: 998;
+  }
+  .accred-strip img { width: 30px; height: auto; aspect-ratio: 210 / 207; }
+  .accred-strip .accred-label { font-size: clamp(0.6rem, 2.9vw, 0.76rem); max-width: none; white-space: nowrap; }
+}
+
+/* ---------- Footer ---------- */
+.footer-grid { grid-template-columns: 1.35fr 1fr 1fr 1.25fr; gap: 40px; padding: 0; }
+.footer-col .footer-sub {
+  font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--primary-yellow); margin: 20px 0 6px; line-height: 1.4;
+}
+.footer-col .footer-address { margin-bottom: var(--spacing-md); }
+.footer-contact-btn { margin-bottom: 4px; }
+.footer-col .contact-list a { color: var(--gray-300); text-decoration: underline; text-underline-offset: 3px; }
+.footer-col .contact-list a:hover { color: var(--primary-yellow); transform: none; }
+.footer-accred-bar {
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 16px;
+  padding: 28px 0; border-top: 1px solid var(--gray-800);
+}
+.footer-accred-badge { display: inline-flex; background: var(--white); border-radius: 12px; padding: 8px 16px; }
+.footer-accred-badge img { height: 56px; width: auto; aspect-ratio: 838 / 312; }
+.footer-accred-label { font-weight: 600; font-size: 0.98rem; color: var(--white); max-width: 280px; line-height: 1.35; }
+@media (max-width: 1023px) {
+  .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+}
+@media (max-width: 600px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+  .footer-accred-bar { flex-direction: column; text-align: center; gap: 12px; }
+  .footer-contact-btn { width: 100%; justify-content: center; }
 }

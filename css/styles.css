@@ -418,57 +418,10 @@ ul {
   color: var(--primary-yellow);
 }
 
-/* Text Slider */
-.text-slider-container {
-  position: relative;
-  width: 100%;
-  min-height: 140px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: var(--spacing-md);
-}
 
-.hero-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 800;
-  line-height: 1.2;
-  color: var(--white);
-  margin-bottom: 0;
-  width: 100%;
-  display: block;
-}
 
-.text-slider {
-  display: block;
-  position: relative;
-  width: 100%;
-  color: var(--primary-yellow);
-  text-align: center;
-  height: auto;
-}
 
-.text-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-  line-height: 1;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-.text-slide.active {
-  opacity: 1;
-  transform: translateY(0);
-  position: relative;
-}
 
 .hero-subtitle {
   font-size: 1.125rem;
@@ -2007,13 +1960,7 @@ section {
     padding: var(--spacing-xl) 0 var(--spacing-2xl);
   }
 
-  .hero-title {
-    font-size: 2rem;
-  }
 
-  .text-slider-container {
-    min-height: 100px;
-  }
 
   .hero-subtitle {
     font-size: 0.95rem;
@@ -2192,13 +2139,7 @@ section {
     padding: var(--spacing-lg) 0 var(--spacing-xl);
   }
 
-  .hero-title {
-    font-size: 1.5rem;
-  }
 
-  .text-slider-container {
-    min-height: 80px;
-  }
 
   .hero-subtitle {
     font-size: 0.85rem;
@@ -2405,7 +2346,6 @@ section {
 }
 
 /* SEO additions */
-.hero-h1{font-size:clamp(1rem,2.2vw,1.35rem);font-weight:600;color:var(--white);letter-spacing:.02em;margin-bottom:var(--spacing-md);opacity:.95}
 .about-section{padding:80px 0;background:#fff}
 .about-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:40px}
 .about-card{background:#fafafa;border:1px solid #eee;border-top:4px solid var(--primary-yellow);border-radius:12px;padding:28px}
@@ -2447,3 +2387,297 @@ section {
 .fee-text{font-size:.9rem;color:#4b5563;line-height:1.5}
 .fee-includes ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:8px}
 .fee-includes li{font-size:.95rem}.fee-includes li i{color:#16a34a;margin-right:8px}
+
+
+/* =====================================================================
+   OIT WEBSITE UPDATE (feature/oit-improvements)
+   Hero headline, SDCC accreditation, learning pillars, values preview,
+   Why Choose extras, floating ENROL NOW button. Uses existing tokens.
+   ===================================================================== */
+
+:root { --accred-strip-height: 0px; }
+
+body {
+  padding-top: calc(var(--countdown-height) + var(--navbar-height) + var(--accred-strip-height));
+}
+html {
+  scroll-padding-top: calc(var(--countdown-height) + var(--navbar-height) + var(--accred-strip-height) + 20px);
+}
+.hero-slider {
+  min-height: calc(100vh - var(--countdown-height) - var(--navbar-height) - var(--accred-strip-height));
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* ---------- Hero: single static headline ---------- */
+.hero-headline {
+  font-size: clamp(2rem, 5.2vw, 3.6rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--primary-yellow);
+  margin: 0;
+  max-width: 14em;
+}
+.hero-subtitle { padding-top: 0; }
+
+/* ---------- Homepage: intro, pillars, values preview ---------- */
+.about-intro { max-width: 760px; margin: var(--spacing-md) auto 0; text-align: left; }
+.about-intro p { color: var(--gray-600); font-size: 1.05rem; line-height: 1.8; margin-bottom: var(--spacing-sm); }
+.pillars-section { background: var(--gray-50); }
+.pillars-section .why-card { background: var(--white); }
+
+.values-preview-title {
+  text-align: center; font-size: 1.35rem; font-weight: 700; color: var(--gray-900);
+  margin: var(--spacing-2xl) 0 var(--spacing-md);
+}
+.values-preview {
+  list-style: none; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin: 0 auto; padding: 0;
+}
+.value-tile {
+  flex: 1 1 150px; max-width: 176px;
+  background: var(--white); border: 1px solid var(--gray-200); border-radius: 12px;
+  padding: 18px 12px; text-align: center;
+}
+.about-card .values-list { list-style: disc; padding-left: 22px; }
+.value-tile i { font-size: 1.4rem; color: var(--primary-blue); margin-bottom: 8px; display: block; }
+.value-tile h4 { font-size: 0.95rem; font-weight: 700; color: var(--gray-900); margin-bottom: 4px; }
+.value-tile p { font-size: 0.82rem; line-height: 1.45; color: var(--gray-600); margin: 0; }
+.values-preview-cta { text-align: center; margin-top: var(--spacing-lg); }
+
+/* ---------- Courses / Why Choose additions ---------- */
+.course-more {
+  display: block; text-align: center; font-weight: 600; font-size: 0.92rem;
+  color: var(--primary-blue); text-decoration: underline; margin: 6px 0 14px;
+}
+.course-more:hover { color: var(--accent-blue); }
+.subsection-title {
+  text-align: center; font-size: 1.5rem; font-weight: 700; color: var(--gray-900);
+  margin: var(--spacing-2xl) 0 var(--spacing-lg);
+}
+.benefits-grid { max-width: 880px; margin: 0 auto; }
+.career-note {
+  display: flex; gap: 14px; align-items: flex-start; max-width: 900px;
+  margin: var(--spacing-2xl) auto 0; padding: 18px 22px;
+  background: rgba(255, 215, 0, 0.15); border-left: 4px solid var(--primary-yellow); border-radius: 8px;
+}
+.career-note i { color: #b8860b; font-size: 1.25rem; margin-top: 3px; }
+.career-note p { margin: 0; color: var(--gray-800); line-height: 1.7; }
+
+/* ---------- Floating ENROL NOW ---------- */
+.enrol-float {
+  position: fixed; right: 0; top: 55%; transform: translateY(-50%); z-index: 900;
+  display: flex; align-items: center; gap: 10px;
+  padding: 14px 18px 14px 16px;
+  background: var(--primary-yellow); color: var(--dark-blue);
+  border-radius: 999px 0 0 999px;
+  box-shadow: -4px 6px 18px rgba(0, 0, 0, 0.2);
+  font-weight: 800; letter-spacing: 0.03em; overflow: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease, background 0.2s ease;
+  animation: enrolPulse 9s ease-in-out infinite;
+}
+.enrol-float:hover, .enrol-float:focus-visible { background: var(--accent-yellow); animation-play-state: paused; }
+.enrol-float:focus-visible { outline: 3px solid var(--dark-blue); outline-offset: 3px; }
+.enrol-float i { font-size: 1.25rem; }
+.enrol-float-text { display: flex; flex-direction: column; line-height: 1.2; white-space: nowrap; }
+.enrol-float-text strong { font-size: 0.9rem; }
+.enrol-float-text small {
+  display: block; font-size: 0.72rem; font-weight: 600;
+  max-width: 0; max-height: 0; opacity: 0; overflow: hidden;
+  transition: max-width 0.35s ease, max-height 0.35s ease, opacity 0.25s ease;
+}
+.enrol-float:hover small, .enrol-float:focus-visible small { max-width: 220px; max-height: 20px; opacity: 1; }
+.enrol-float.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+@keyframes enrolPulse {
+  0%, 84%, 100% { box-shadow: -4px 6px 18px rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(255, 215, 0, 0); }
+  88% { box-shadow: -4px 6px 18px rgba(0, 0, 0, 0.2), 0 0 0 0 rgba(255, 215, 0, 0.6); }
+  98% { box-shadow: -4px 6px 18px rgba(0, 0, 0, 0.2), 0 0 0 16px rgba(255, 215, 0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .enrol-float { animation: none; transition: none; }
+  .enrol-float-text small { transition: none; }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 768px) {
+
+
+
+  .hero-headline { font-size: clamp(1.75rem, 8vw, 2.25rem); }
+
+  .career-note { flex-direction: column; }
+}
+
+/* Floating ENROL NOW: compact bottom-left pill on tablet and mobile */
+@media (max-width: 1023px) {
+  .enrol-float {
+    top: auto; bottom: 16px; left: 16px; right: auto; transform: none;
+    border-radius: 999px; padding: 12px 18px; min-height: 48px;
+  }
+  .enrol-float-text small { display: none; }
+  .footer { padding-bottom: calc(var(--spacing-lg) + 64px); }
+}
+
+
+/* =====================================================================
+   HEADER, NAV, ACCREDITATION BADGE AND FOOTER REDESIGN
+   Grouped dropdown menus, prominent SDCC badge, structured footer.
+   ===================================================================== */
+
+/* ---------- Navbar ---------- */
+.nav-container { gap: 20px; }
+.nav-menu { margin-left: auto; }
+.nav-menu .nav-list { display: flex; align-items: center; gap: 2px; flex-wrap: nowrap; list-style: none; margin: 0; padding: 0; }
+.nav-menu .nav-list > li { position: relative; flex-shrink: 0; }
+.nav-menu .nav-link {
+  display: inline-flex; align-items: center; gap: 6px; padding: 10px 13px;
+  font-family: inherit; font-size: 0.93rem; font-weight: 600; color: var(--gray-800);
+  background: none; border: 0; border-radius: 10px; cursor: pointer; white-space: nowrap;
+  transition: var(--transition);
+}
+.nav-menu .nav-link i { font-size: 0.62rem; transition: transform 0.2s ease; }
+.nav-menu .nav-link:hover,
+.nav-menu .nav-link:focus-visible,
+.nav-menu .has-dropdown.open > .nav-link { color: var(--primary-blue); background: rgba(30, 64, 175, 0.07); }
+.nav-menu .nav-link:focus-visible { outline: 2px solid var(--primary-blue); outline-offset: 2px; }
+.has-dropdown.open > .nav-link i { transform: rotate(180deg); }
+.nav-menu .nav-cta-item { margin-left: 8px; }
+
+/* ---------- Dropdown panels ---------- */
+.nav-menu .dropdown {
+  display: none; position: absolute; top: calc(100% + 10px); left: 0; z-index: 1100;
+  min-width: 300px; padding: 10px; background: var(--white);
+  border: 1px solid var(--gray-200); border-radius: 14px; box-shadow: var(--shadow-xl);
+}
+.nav-menu .dropdown::before { content: ""; position: absolute; left: 0; right: 0; top: -12px; height: 12px; }
+.nav-menu .dropdown-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; align-items: stretch; flex-wrap: wrap; }
+.nav-menu .dropdown a {
+  display: block; padding: 10px 14px; border-radius: 10px; white-space: normal;
+  font-size: 0.92rem; color: var(--gray-900); background: none;
+}
+.nav-menu .dropdown a strong { display: block; font-weight: 700; }
+.nav-menu .dropdown a span { display: block; margin-top: 2px; font-size: 0.78rem; font-weight: 500; color: var(--gray-600); line-height: 1.35; }
+.nav-menu .dropdown a:hover,
+.nav-menu .dropdown a:focus-visible { background: rgba(30, 64, 175, 0.07); color: var(--primary-blue); }
+.nav-menu .dropdown a.dropdown-all {
+  margin-top: 6px; border-top: 1px solid var(--gray-100); border-radius: 0 0 10px 10px;
+  font-weight: 700; color: var(--primary-blue); display: flex; align-items: center; gap: 8px;
+}
+.nav-menu .dropdown-courses { min-width: 590px; left: -60px; grid-template-columns: 310px 1fr; gap: 14px; }
+.nav-menu .dropdown a.dropdown-feature {
+  display: flex; flex-direction: column; gap: 4px; padding: 10px; background: var(--gray-50);
+  border: 1px solid var(--gray-100); border-radius: 12px;
+}
+.dropdown-feature img { width: 100%; height: 112px; object-fit: cover; border-radius: 8px; margin-bottom: 4px; }
+.nav-menu .dropdown a.dropdown-feature .dropdown-eyebrow {
+  align-self: flex-start; background: var(--primary-yellow); color: var(--dark-blue);
+  font-size: 0.66rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 3px 10px; border-radius: var(--radius-full); margin: 0;
+}
+
+/* ---------- SDCC accreditation: header badge ---------- */
+.header-accred {
+  display: flex; align-items: center; gap: 10px; flex-shrink: 0;
+  padding-left: 16px; border-left: 1px solid var(--gray-200);
+}
+.header-accred img { width: 50px; height: auto; aspect-ratio: 210 / 207; flex-shrink: 0; }
+.accred-label { font-size: 0.76rem; font-weight: 700; line-height: 1.25; color: var(--dark-blue); max-width: 150px; }
+.accred-strip { display: none; }
+
+/* ---------- Desktop behaviour (hover / keyboard focus opens menus) ---------- */
+@media (min-width: 1180px) {
+  .has-dropdown:hover > .dropdown,
+  .has-dropdown:focus-within > .dropdown,
+  .has-dropdown.open > .dropdown { display: block; }
+  .has-dropdown:hover > .dropdown-courses,
+  .has-dropdown:focus-within > .dropdown-courses,
+  .has-dropdown.open > .dropdown-courses { display: grid; }
+  .has-dropdown:hover > .nav-link { color: var(--primary-blue); background: rgba(30, 64, 175, 0.07); }
+  .has-dropdown:hover > .nav-link i { transform: rotate(180deg); }
+}
+@media (min-width: 1180px) and (max-width: 1279px) {
+  .logo-text { font-size: 0.95rem; }
+  .nav-menu .nav-link { padding: 10px 10px; font-size: 0.9rem; }
+  .nav-container { gap: 14px; }
+  .accred-label { font-size: 0.72rem; max-width: 128px; }
+  .header-accred { padding-left: 12px; }
+}
+
+/* ---------- Tablet and mobile: slide-out menu with accordions ---------- */
+@media (max-width: 1179px) {
+  .nav-container { gap: 12px; }
+  .header-accred { margin-left: auto; }
+  .mobile-toggle { display: block; font-size: 1.35rem; }
+  .nav-menu {
+    position: fixed; margin: 0; width: 100%;
+    top: calc(var(--countdown-height) + var(--navbar-height) + var(--accred-strip-height));
+    height: calc(100vh - var(--countdown-height) - var(--navbar-height) - var(--accred-strip-height));
+    left: -100%; background: var(--white); padding: 8px 22px 40px;
+    box-shadow: var(--shadow-xl); transition: left 0.3s ease-in-out; overflow-y: auto; z-index: 999;
+  }
+  .nav-menu.active { left: 0; }
+  .nav-menu { display: block; }
+  .nav-menu .nav-list { flex-direction: column; align-items: stretch; gap: 0; width: 100%; }
+  .nav-menu .nav-list > li { border-bottom: 1px solid var(--gray-100); }
+  .nav-menu .nav-link { width: 100%; justify-content: space-between; padding: 17px 6px; font-size: 1.05rem; border-radius: 0; }
+  .nav-menu .nav-link i { font-size: 0.75rem; }
+  .nav-menu .dropdown {
+    position: static; min-width: 0; padding: 0 0 12px 6px; background: none; border: 0; box-shadow: none; border-radius: 0;
+  }
+  .nav-menu .dropdown::before { display: none; }
+  .has-dropdown.open > .dropdown,
+  .has-dropdown.open > .dropdown-courses { display: block; }
+  .nav-menu .dropdown a.dropdown-feature { display: none; }
+  .nav-menu .dropdown a { padding: 11px 12px; }
+  .nav-menu .nav-cta-item { border-bottom: 0; margin: 0; padding-top: 20px; }
+  .nav-menu .nav-cta { display: block; text-align: center; padding: 15px 20px !important; font-size: 1rem !important; }
+}
+@media (min-width: 769px) and (max-width: 1179px) {
+  .nav-menu { width: 400px; left: auto; right: -440px; transition: right 0.3s ease-in-out; }
+  .nav-menu.active { left: auto; right: 0; }
+}
+
+/* ---------- Mobile: accreditation strip under the header ---------- */
+@media (max-width: 768px) {
+  :root { --accred-strip-height: 40px; }
+  .header-accred { display: none; }
+  .accred-strip {
+    display: flex; position: fixed; left: 0; right: 0;
+    top: calc(var(--countdown-height) + var(--navbar-height)); height: var(--accred-strip-height);
+    align-items: center; justify-content: center; gap: 9px; padding: 0 12px;
+    background: var(--white); border-bottom: 1px solid rgba(0, 0, 0, 0.06); z-index: 998;
+  }
+  .accred-strip img { width: 30px; height: auto; aspect-ratio: 210 / 207; }
+  .accred-strip .accred-label { font-size: clamp(0.6rem, 2.9vw, 0.76rem); max-width: none; white-space: nowrap; }
+}
+
+/* ---------- Footer ---------- */
+.footer-grid { grid-template-columns: 1.35fr 1fr 1fr 1.25fr; gap: 40px; padding: 0; }
+.footer-col .footer-sub {
+  font-size: 0.78rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--primary-yellow); margin: 20px 0 6px; line-height: 1.4;
+}
+.footer-col .footer-address { margin-bottom: var(--spacing-md); }
+.footer-contact-btn { margin-bottom: 4px; }
+.footer-col .contact-list a { color: var(--gray-300); text-decoration: underline; text-underline-offset: 3px; }
+.footer-col .contact-list a:hover { color: var(--primary-yellow); transform: none; }
+.footer-accred-bar {
+  display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 16px;
+  padding: 28px 0; border-top: 1px solid var(--gray-800);
+}
+.footer-accred-badge { display: inline-flex; background: var(--white); border-radius: 12px; padding: 8px 16px; }
+.footer-accred-badge img { height: 56px; width: auto; aspect-ratio: 838 / 312; }
+.footer-accred-label { font-weight: 600; font-size: 0.98rem; color: var(--white); max-width: 280px; line-height: 1.35; }
+@media (max-width: 1023px) {
+  .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+}
+@media (max-width: 600px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+  .footer-accred-bar { flex-direction: column; text-align: center; gap: 12px; }
+  .footer-contact-btn { width: 100%; justify-content: center; }
+}

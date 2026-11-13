@@ -462,6 +462,12 @@ verifyCertLinks.forEach(link => {
   });
 });
 
+// Open the modal when arriving from another page via /#verify-certificate
+if (certModal && window.location.hash === '#verify-certificate') {
+  certModal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
 // Close modal
 modalClose.addEventListener('click', () => {
   certModal.classList.remove('active');
@@ -866,6 +872,50 @@ function showError(message) {
   }
 
   // ==================== SMOOTH SCROLL FOR ANCHOR LINKS ====================
+  // Offsets for the fixed header (navbar + mobile accreditation strip),
+  // honours reduced-motion, and moves focus to the form heading for #register.
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  function getHeaderOffset() {
+    const strip = document.querySelector('.accred-strip');
+    const nav = document.querySelector('.navbar');
+    let bottom = nav ? nav.getBoundingClientRect().bottom : 80;
+    if (strip && getComputedStyle(strip).display !== 'none') {
+      bottom = Math.max(bottom, strip.getBoundingClientRect().bottom);
+    }
+    return bottom + 12;
+  }
+
+  // Scrolls to a target under the fixed header. Lazy-loaded images can change the
+  // page height while (or just after) scrolling, so check again once the scroll
+  // settles and correct the position if the target has moved.
+  function scrollToTarget(target, instant, triesLeft, done) {
+    const offBy = () => target.getBoundingClientRect().top - getHeaderOffset();
+    const jump = (behavior) => window.scrollTo({
+      top: target.getBoundingClientRect().top + window.pageYOffset - getHeaderOffset(),
+      behavior: behavior
+    });
+
+    let settled = false;
+    const afterScroll = () => {
+      if (settled) return;
+      settled = true;
+      if (Math.abs(offBy()) > 8 && triesLeft > 0) {
+        scrollToTarget(target, instant, triesLeft - 1, done);
+        return;
+      }
+      // Final check shortly after, to catch images that finished loading late.
+      setTimeout(() => {
+        if (Math.abs(offBy()) > 8) jump('auto');
+        if (done) done();
+      }, 700);
+    };
+
+    jump(instant ? 'auto' : 'smooth');
+    if (!instant && 'onscrollend' in window) window.addEventListener('scrollend', afterScroll, { once: true });
+    setTimeout(afterScroll, instant ? 300 : 1500);
+  }
+
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
@@ -876,17 +926,25 @@ function showError(message) {
       const target = document.querySelector(href);
       
       if (target) {
-        const headerOffset = 80;
-        const elementPosition = target.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
+        const instant = prefersReducedMotion.matches;
+        scrollToTarget(target, instant, 5, () => {
+          if (href === '#register') {
+            const heading = document.getElementById('register-heading');
+            if (heading) heading.focus({ preventScroll: true });
+          }
         });
       }
     });
   });
+
+  // ==================== FLOATING ENROL NOW: hide while the form is on screen ====================
+  const enrolFloat = document.getElementById('enrolFloat');
+  const registerSection = document.getElementById('register');
+  if (enrolFloat && registerSection && 'IntersectionObserver' in window) {
+    new IntersectionObserver((entries) => {
+      entries.forEach(entry => enrolFloat.classList.toggle('is-hidden', entry.isIntersecting));
+    }, { threshold: 0.25 }).observe(registerSection);
+  }
 
   // ==================== SCROLL ANIMATIONS ====================
   const observerOptions = {

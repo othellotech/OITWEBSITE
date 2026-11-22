@@ -121,3 +121,17 @@
   .page-main { padding: var(--spacing-xl) 0; }
   .page-hero .hero-cta .btn { width: 100%; justify-content: center; }
 }
+
+
+/* ---------- Conversion restructure: fees panel, actions, sidebar link ---------- */
+.page-section h3 { font-size: 1.1rem; font-weight: 700; color: var(--gray-900); margin: 18px 0 8px; }
+.fee-panel { background: var(--gray-50); border: 1px solid var(--gray-200); border-left: 4px solid var(--primary-yellow); border-radius: 10px; padding: 16px 20px; margin: 12px 0 18px; }
+.fee-panel p { margin: 6px 0; font-size: 1.02rem; }
+.fee-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 22px; }
+.glance-fees-link { display: block; margin: 12px 0; font-weight: 600; font-size: 0.93rem; color: var(--primary-blue); text-decoration: underline; text-underline-offset: 3px; }
+.glance-fees-link i { margin-right: 6px; }
+.page-cta .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.page-cta .btn-adviser { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,0.75); }
+.page-cta .btn-adviser i { color: #25d366; }
+.page-cta .btn-adviser:hover, .page-cta .btn-adviser:focus-visible { background: rgba(255,255,255,0.14); color: #fff; }
+.btn-adviser { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; }

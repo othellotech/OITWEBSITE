@@ -2681,3 +2681,178 @@ html {
   .footer-accred-bar { flex-direction: column; text-align: center; gap: 12px; }
   .footer-contact-btn { width: 100%; justify-content: center; }
 }
+
+
+/* =====================================================================
+   FLOATING WHATSAPP ADVISER (replaces the floating ENROL NOW / circle)
+   ===================================================================== */
+.oit-adviser {
+  position: fixed; right: 16px; bottom: 18px; z-index: 950;
+  animation: adviserFloat 3.6s ease-in-out infinite;
+}
+.oit-adviser__link {
+  display: flex; align-items: center; gap: 0; text-decoration: none; color: #fff;
+}
+.oit-adviser__bubble {
+  position: relative; display: block;
+  max-width: 260px; overflow: hidden; white-space: normal;
+  background: #0f8444; color: #fff;
+  font-size: 0.92rem; font-weight: 600; line-height: 1.3;
+  padding: 11px 16px; margin-right: 10px;
+  border-radius: 12px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+  transition: max-width 0.4s ease, padding 0.4s ease, margin 0.4s ease, opacity 0.3s ease;
+}
+.oit-adviser__bubble::after { /* small tail pointing at the icon */
+  content: ""; position: absolute; right: -6px; top: 50%; width: 12px; height: 12px;
+  background: #0f8444; transform: translateY(-50%) rotate(45deg); border-radius: 2px;
+}
+.oit-adviser__icon {
+  position: relative; flex: 0 0 auto;
+  width: 58px; height: 58px; border-radius: 50%;
+  background: #25d366; color: #fff; font-size: 32px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45); border: 3px solid #fff;
+  transition: transform 0.2s ease;
+}
+.oit-adviser__icon::before { /* soft pulse ring */
+  content: ""; position: absolute; inset: -3px; border-radius: 50%;
+  border: 2px solid rgba(37, 211, 102, 0.55); animation: adviserPulse 2.6s ease-out infinite;
+}
+.oit-adviser__link:hover .oit-adviser__icon,
+.oit-adviser__link:focus-visible .oit-adviser__icon { transform: scale(1.08); }
+.oit-adviser__link:focus-visible { outline: 3px solid var(--dark-blue); outline-offset: 4px; border-radius: 14px; }
+.oit-adviser.is-collapsed .oit-adviser__bubble {
+  max-width: 0; padding-left: 0; padding-right: 0; margin-right: 0; opacity: 0; box-shadow: none;
+  white-space: nowrap; /* keeps the hidden bubble one line tall so the icon never shifts */
+}
+.oit-adviser.is-collapsed .oit-adviser__bubble::after { display: none; }
+@keyframes adviserFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@keyframes adviserPulse { 0% { transform: scale(1); opacity: 0.9; } 70%, 100% { transform: scale(1.45); opacity: 0; } }
+
+/* Back-to-top button (homepage) sits above the adviser so the two never overlap */
+.back-to-top { bottom: 92px !important; right: 22px !important; width: 46px !important; height: 46px !important; }
+
+@media (max-width: 600px) {
+  .oit-adviser { right: 12px; bottom: 14px; }
+  .oit-adviser__bubble { max-width: min(220px, calc(100vw - 110px)); font-size: 0.84rem; padding: 9px 13px; }
+  .oit-adviser__icon { width: 54px; height: 54px; font-size: 30px; }
+  .back-to-top { bottom: 84px !important; right: 18px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .oit-adviser, .oit-adviser__icon::before { animation: none; }
+  .oit-adviser__bubble { transition: none; }
+}
+@media print { .oit-adviser { display: none; } }
+
+
+/* =====================================================================
+   CONVERSION STRUCTURE ADDITIONS
+   Trust strip, value-first course cards, CTA rows, location contact.
+   ===================================================================== */
+
+/* ---------- Hero: tertiary adviser link ---------- */
+.hero-adviser-link {
+  display: inline-flex; align-items: center; gap: 8px; margin-top: 18px;
+  color: #fff; font-weight: 600; font-size: 0.95rem;
+  text-decoration: underline; text-underline-offset: 4px; text-decoration-color: rgba(255,255,255,0.6);
+}
+.hero-adviser-link i { color: #25d366; font-size: 1.15rem; }
+.hero-adviser-link:hover, .hero-adviser-link:focus-visible { text-decoration-color: var(--primary-yellow); color: var(--primary-yellow); }
+
+/* ---------- Trust indicators ---------- */
+.trust-strip { background: var(--dark-blue); color: #fff; padding: 26px 0; border-bottom: 4px solid var(--primary-yellow); }
+.trust-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+.trust-item { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px; padding: 4px 8px; }
+.trust-item i { color: var(--primary-yellow); font-size: 1.35rem; margin-bottom: 4px; }
+.trust-item strong { font-size: 1.25rem; font-weight: 800; line-height: 1.2; }
+.trust-item span { font-size: 0.85rem; color: #cbd5e1; line-height: 1.4; }
+@media (max-width: 1023px) { .trust-list { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 600px) { .trust-list { grid-template-columns: repeat(2, 1fr); gap: 16px 10px; } .trust-item:last-child { grid-column: 1 / -1; } }
+
+/* ---------- Course cards: value first, price last ---------- */
+.courses-section .courses-grid.courses-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--spacing-lg); }
+@media (max-width: 899px) { .courses-section .courses-grid.courses-4 { grid-template-columns: 1fr; } }
+.courses-section .course-image { height: 200px; }
+.course-card.price-card { display: flex; flex-direction: column; }
+.course-card.price-card .course-content { flex: 1; gap: 14px; }
+.course-card .course-meta { flex-wrap: wrap; gap: 6px 18px; margin-top: -6px; }
+.course-block h4 {
+  font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--primary-blue); margin: 0 0 8px;
+}
+.course-block .course-features { margin: 0; gap: 7px; }
+.course-block .course-features li { align-items: flex-start; line-height: 1.45; }
+.course-block .course-features i { margin-top: 4px; flex: 0 0 auto; }
+.course-block.gain .course-features i { color: #15803d; }
+.course-perks { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; padding: 0; list-style: none; }
+.course-perks li { font-size: 0.76rem; font-weight: 600; color: var(--gray-700); background: var(--gray-100); border-radius: 999px; padding: 4px 10px; }
+.course-card .course-bonus { margin: 10px 0 0; }
+.course-fee {
+  margin-top: auto; padding: 14px 16px; border-top: 1px solid var(--gray-200);
+  background: var(--gray-50); border-radius: 10px; display: grid; gap: 3px;
+}
+.course-fee .fee-kicker { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-600); }
+.course-fee .price-label { color: #7a5c00; }
+.course-fee .price-main { font-size: 1.55rem; line-height: 1.2; }
+.course-fee .price-sub { font-size: 0.82rem; color: var(--gray-600); }
+.course-fee .price-once { font-size: 0.92rem; color: var(--gray-800); }
+.course-card .course-btn { margin-top: 4px; }
+
+/* ---------- Generic CTA row ---------- */
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; align-items: center; margin-top: var(--spacing-lg); }
+.btn-adviser { background: #fff; color: #0f6b38; border: 2px solid #25d366; }
+.btn-adviser i { color: #25d366; }
+.btn-adviser:hover, .btn-adviser:focus-visible { background: #f0fdf4; color: #0f6b38; transform: translateY(-2px); }
+.on-dark .btn-adviser, .register-section .btn-adviser { background: transparent; color: #fff; border-color: rgba(255,255,255,0.7); }
+.on-dark .btn-adviser:hover, .register-section .btn-adviser:hover { background: rgba(255,255,255,0.12); color: #fff; }
+
+/* ---------- About / approach merge ---------- */
+.about-vision-note { max-width: 860px; margin: var(--spacing-xl) auto 0; text-align: center; }
+.about-vision-note h3 { font-size: 1.25rem; font-weight: 800; color: var(--gray-900); margin-bottom: 8px; }
+.about-vision-note p { color: var(--gray-700); line-height: 1.7; }
+
+/* ---------- Partners: SDCC featured ---------- */
+.partner-feature-note {
+  max-width: 880px; margin: 0 auto var(--spacing-xl); padding: 18px 22px; display: flex; gap: 14px; align-items: flex-start;
+  background: rgba(255, 215, 0, 0.15); border-left: 4px solid var(--primary-yellow); border-radius: 8px; color: var(--gray-800); line-height: 1.7;
+}
+.partner-feature-note i { color: #b8860b; font-size: 1.25rem; margin-top: 4px; }
+.partner-feature-note p { margin: 0; }
+
+/* ---------- Testimonials polish ---------- */
+.testimonial-card { position: relative; }
+.testimonial-card::before {
+  content: "\201C"; position: absolute; top: 6px; right: 18px; font-size: 4rem; line-height: 1;
+  color: rgba(30, 64, 175, 0.12); font-family: Georgia, serif;
+}
+
+/* ---------- Location contact ---------- */
+.location-contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 0 0 var(--spacing-lg); padding: 0; list-style: none; }
+.location-contact li { display: flex; gap: 12px; align-items: flex-start; background: var(--gray-50); border: 1px solid var(--gray-200); border-radius: 12px; padding: 14px 16px; color: var(--gray-800); font-size: 0.95rem; line-height: 1.5; }
+.location-contact i { color: var(--primary-blue); margin-top: 4px; width: 18px; text-align: center; }
+.location-contact a { color: var(--primary-blue); font-weight: 600; }
+.location-social { display: flex; gap: 12px; justify-content: center; margin-top: 16px; }
+.location-social a { width: 42px; height: 42px; border-radius: 50%; background: var(--primary-blue); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; transition: var(--transition); }
+.location-social a:hover { background: var(--accent-blue); transform: translateY(-3px); }
+.map-frame { width: 100%; height: 350px; border: 0; border-radius: 12px; }
+
+/* ---------- Final admission section extras ---------- */
+.register-adviser { margin-top: 18px; }
+.register-adviser-note { margin: 12px 0 0 !important; font-size: 0.95rem !important; }
+
+
+/* ---------- In-page video player (inside each story card) ---------- */
+.story-image.is-video { height: auto; aspect-ratio: 16 / 9; background: #000; }
+.story-image.is-video.is-short { aspect-ratio: 9 / 16; max-height: 520px; }
+.story-image.is-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.story-video-close { position: absolute; top: 8px; right: 8px; z-index: 2; width: 34px; height: 34px; border: 0; border-radius: 50%; background: rgba(255,255,255,0.92); color: #0f172a; font-size: 1.3rem; line-height: 1; cursor: pointer; }
+.story-video-close:hover, .story-video-close:focus-visible { background: var(--primary-yellow); }
+.story-video-fallback { display: block; padding: 8px 12px 0; text-align: center; font-size: 0.8rem; color: var(--gray-600); text-decoration: underline; }
+.stories-grid.has-playing { align-items: start; }
+.story-card:has(.story-image.is-video):hover { transform: none; }
+
+/* ---------- Location contact boxes: keep long text (email) inside its rectangle ---------- */
+.location-contact { grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); }
+.location-contact li { min-width: 0; }
+.location-contact li span { min-width: 0; overflow-wrap: break-word; }
+.location-contact li a { overflow-wrap: break-word; }

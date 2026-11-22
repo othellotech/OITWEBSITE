@@ -118,7 +118,7 @@
           </li>
           <li><a class="nav-link" href="./blog/index.html">Blog</a></li>
           <li><a class="nav-link" href="./index.html#location">Contact</a></li>
-          <li class="nav-cta-item"><a href="./index.html#register" class="nav-cta">ENROL NOW</a></li>
+          <li class="nav-cta-item"><a href="./index.html#register" class="nav-cta">Apply for Admission</a></li>
         </ul>
       </nav>
       <div class="header-accred">
@@ -142,7 +142,7 @@
         <h1>About Othello Institute of Technology</h1>
         <p class="lead">A practical technology training academy in Ojo, Lagos, accredited by Skill Development Council Canada.</p>
         <div class="hero-cta">
-          <a href="./index.html#register" class="btn btn-primary"><span>ENROL NOW</span></a>
+          <a href="./index.html#register" class="btn btn-primary"><span>Apply for Admission</span></a>
           <a href="./index.html#courses" class="btn btn-secondary"><span>EXPLORE COURSES</span></a>
         </div>
       </div>
@@ -213,7 +213,8 @@
       <div class="container">
         <h2>Start your tech journey today</h2>
         <p>Learn practical technology skills at Othello Institute of Technology in Ojo, Lagos.</p>
-        <div class="hero-cta"><a href="./index.html#register" class="btn btn-primary"><span>ENROL NOW</span></a></div>
+        <div class="hero-cta"><a href="./index.html#register" class="btn btn-primary"><span>Apply for Admission</span></a>
+          <a href="https://wa.me/2348127961486?text=Hello%20OIT%2C%20I%20came%20across%20your%20website%20and%20would%20like%20to%20speak%20with%20an%20adviser.%20Please%20assist%20me%20with%20information%20about%20your%20training%20programmes%20and%20admission.%20Thank%20you." target="_blank" rel="noopener noreferrer" class="btn btn-adviser"><i class="fab fa-whatsapp" aria-hidden="true"></i><span>Speak with an Adviser</span></a></div>
       </div>
     </section>
   </main>
@@ -289,12 +290,16 @@
       </div>
     </div>
   </footer>
-  <a href="./index.html#register" class="enrol-float" id="enrolFloat" aria-label="ENROL NOW. Start your tech journey today.">
-    <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-    <span class="enrol-float-text"><strong>ENROL NOW</strong><small>Start your tech journey today.</small></span>
-  </a>
+  <!-- Floating WhatsApp adviser (own link and prefilled message; other WhatsApp links are unchanged) -->
+  <div class="oit-adviser" id="oitAdviser">
+    <a class="oit-adviser__link" href="https://wa.me/2348127961486?text=Hello%20OIT%2C%20I%20came%20across%20your%20website%20and%20would%20like%20to%20speak%20with%20an%20adviser.%20Please%20assist%20me%20with%20information%20about%20your%20training%20programmes%20and%20admission.%20Thank%20you." target="_blank" rel="noopener noreferrer" aria-label="Chat with an OIT Adviser on WhatsApp (opens WhatsApp)">
+      <span class="oit-adviser__bubble">Chat with an OIT Adviser on WhatsApp</span>
+      <span class="oit-adviser__icon" aria-hidden="true"><i class="fab fa-whatsapp"></i></span>
+    </a>
+  </div>
 
   <script src="./js/site-common.js"></script>
   <script src="./js/nav.js"></script>
+  <script src="./js/adviser.js"></script>
 </body>
 </html>

@@ -1002,14 +1002,58 @@ function showError(message) {
   // ==================== VIDEO PLAY BUTTONS ====================
   const playButtons = document.querySelectorAll('.story-play');
   
-  playButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const videoUrl = button.getAttribute('data-video');
-      if (videoUrl) {
-        window.open(videoUrl, '_blank', 'noopener,noreferrer');
-      }
-    });
-  });
+  // Videos play right inside the page: clicking play swaps the card's picture for the video player
+  // (YouTube privacy-enhanced embed). No pop-up and no new tab. The original YouTube link stays in
+  // data-video and is shown as a small fallback link under the player.
+  const getYouTubeId = (url) => {
+    const m = url.match(/(?:shorts\/|youtu\.be\/|[?&]v=|embed\/)([A-Za-z0-9_-]{11})/);
+    return m ? m[1] : null;
+  };
+
+  const storiesGrid = document.querySelector('.stories-grid');
+
+  const stopInlineVideo = (card) => {
+    if (!card || !card.dataset.playing) return;
+    const box = card.querySelector('.story-image');
+    box.innerHTML = card._thumb;          // put the original picture + play button back
+    box.classList.remove('is-video', 'is-short');
+    const fb = card.querySelector('.story-video-fallback'); if (fb) fb.remove();
+    delete card.dataset.playing;
+    if (storiesGrid && !storiesGrid.querySelector('[data-playing]')) storiesGrid.classList.remove('has-playing');
+    const again = box.querySelector('.story-play'); if (again) bindPlay(again);
+  };
+
+  const playInline = (button) => {
+    const card = button.closest('.story-card');
+    const videoUrl = button.getAttribute('data-video');
+    const id = videoUrl && getYouTubeId(videoUrl);
+    if (!id) { if (videoUrl) window.open(videoUrl, '_blank', 'noopener,noreferrer'); return; }
+    document.querySelectorAll('.story-card[data-playing]').forEach(stopInlineVideo); // only one at a time
+    const box = card.querySelector('.story-image');
+    const h = card.querySelector('h3');
+    const title = h ? h.textContent.trim().replace(/"/g, '') : 'OIT video';
+    card._thumb = box.innerHTML;
+    card.dataset.playing = '1';
+    box.classList.add('is-video');
+    if (/\/shorts\//.test(videoUrl)) box.classList.add('is-short');
+    box.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1" title="Video: ' + title +
+      '" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>' +
+      '<button type="button" class="story-video-close" aria-label="Close video">&times;</button>';
+    box.querySelector('.story-video-close').addEventListener('click', () => stopInlineVideo(card));
+    const fb = document.createElement('a');
+    fb.className = 'story-video-fallback'; fb.href = videoUrl; fb.target = '_blank'; fb.rel = 'noopener noreferrer';
+    fb.textContent = 'Trouble playing? Watch on YouTube';
+    box.insertAdjacentElement('afterend', fb);
+    if (storiesGrid) storiesGrid.classList.add('has-playing');
+  };
+
+  const bindPlay = (button) => {
+    const card = button.closest('.story-card');
+    const h = card && card.querySelector('h3');
+    if (!button.getAttribute('aria-label')) button.setAttribute('aria-label', 'Play video: ' + (h ? h.textContent.trim() : 'OIT story'));
+    button.addEventListener('click', () => playInline(button));
+  };
+  playButtons.forEach(bindPlay);
 
   // ==================== DYNAMIC YEAR IN FOOTER ====================
   const yearElements = document.querySelectorAll('.current-year');
@@ -1162,7 +1206,8 @@ function showError(message) {
     document.body.appendChild(button);
   };
 
-  createWhatsAppButton();
+  // Replaced by the floating WhatsApp adviser widget (see js/adviser.js and #oitAdviser in the HTML).
+  // createWhatsAppButton();
 
   // ==================== KEYBOARD ACCESSIBILITY ====================
   document.addEventListener('keydown', (e) => {
